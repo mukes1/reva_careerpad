@@ -1,12 +1,171 @@
-extends layout
-
-block content
-  header.main-header
-    nav.main-header__nav
-      ul.main-header__item-list
-        li.main-header__item
-          a.active(href='/') REVA Careerpad
-        li.main-header__item
-          a(href='/login') Login
-        li.main-header__item
-          a(href='/companies') For Companies
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  meta(http-equiv='X-UA-Compatible' content='ie=edge')
+  link(href='https://fonts.googleapis.com/css?family=Lora|Roboto' rel='stylesheet')
+  link(rel='stylesheet' href='stylesheets/style.css')
+  link(rel='icon' type='image/png' href='img/favicon-32x32.png' sizes='32x32')
+  link(rel='icon' type='image/png' href='img/favicon-16x16.png' sizes='16x16')
+  title REVA Careerpad | Launch Your Career
+// naigation area
+.navigation
+  .navigation__icon
+    img(src='img/logo.PNG' alt='REVA Careerpad Logo')
+  .navigation__nav
+    ul.navigation__list
+      li.navigation__item
+        a.navigation__link(href='/') Home
+      li.navigation__item
+        a.navigation__link(href='#') About Us
+      li.navigation__item
+        a.navigation__link(href='login')
+          | Student Panel
+          i.icofont-curved-down
+      li.navigation__item
+        a.navigation__link(href='#') Placement Offers
+      li.navigation__item
+        a.navigation__link(href='#') Placement Office
+// cover page
+.header
+  .header__title
+    h1.header__text--primary Welcome To Reva Careerpad
+    ul.header__list
+      li.header__list--text Explore..
+      li.header__list--text Get App
+.tabs
+  ul.tabs__list
+    li.tabs__list--item
+      a(href='#') Latest News
+    li.tabs__list--item
+      a(href='#') Job Offers
+    li.tabs__list--item
+      a(href='#') Add Resume
+.breadcrumbs
+  ul.breadcrumbs__list
+    li.breadcrumbs__list--item
+      a.breadcrumbs__link(href='') Suggestion
+    li.breadcrumbs__list--item
+      a.breadcrumbs__link(href='') By Date
+    li.breadcrumbs__list--item
+      a.breadcrumbs__link(href='') By Category
+.row
+  .col-1-of-3
+    .cards
+      .cards__img
+        img.cards__img--inner(src='./img/offer2.png' alt='offer')
+      .cards__heading
+        p.cards__heading--primary Company
+        p.cards__heading--secondary Vacant Post
+      .cards__button
+        a.cards__link(href='') Apply Now
+  .col-1-of-3
+    .cards
+      .cards__img
+        img.cards__img--inner(src='./img/offer1.png' alt='offer')
+      .cards__heading
+        p.cards__heading--primary Company
+        p.cards__heading--secondary Vacant Post
+      .cards__button
+        a.cards__link(href='') Apply Now
+  .col-1-of-3
+    .cards
+      .cards__img
+        img.cards__img--inner(src='./img/offer.png' alt='offer 1')
+      .cards__heading
+        p.cards__heading--primary Company
+        p.cards__heading--secondary Vacant Post
+      .cards__button
+        a.cards__link(href='') Apply Now
+.companies
+  .companies__heading
+    h1 Placement at Reva
+  .row.companies__img
+    .col-1-of-4
+      img.companies__img--inner(src='./img/biocon.png' alt='Biocon')
+    .col-1-of-4
+      img.companies__img--inner(src='./img/amazon.png' alt='Capgemini')
+    .col-1-of-4
+      img.companies__img--inner(src='./img/tata.png' alt='Amazon')
+    .col-1-of-4
+      img.companies__img--inner(src='./img/capgemini.png' alt='tata')
+.companies
+  .companies__heading
+    h1 Industry Collaboration
+  .row.companies__img
+    .col-1-of-4
+      img.companies__img--inner(src='./img/vmware.png' alt='vmware')
+    .col-1-of-4
+      img.companies__img--inner(src='./img/ibm.png' alt='IBM')
+    .col-1-of-4
+      img.companies__img--inner(src='./img/intel.png' alt='Intel')
+    .col-1-of-4
+      img.companies__img--inner(src='./img/chipware.png' alt='chipware')
+.footer
+  .footer__upper
+    .row
+      .col-1-of-2.footer__upper--logo
+        img(src='./img/reva.jpg' alt='REVA University')
+      .col-1-of-2.footer__upper--share
+        ul.footer__share
+          li.footer__share--text.footer__share--icon Connect With US
+          li.footer__share--icon
+            a(href='http://instagram.com' target='_blank' rel='noopener noreferrer')
+              img(src='./img/icons/icon-instagram.png' alt='Instagram' title='Instagram')
+          li.footer__share--icon
+            a(href='http://instagram.com' target='_blank' rel='noopener noreferrer')
+              img(src='./img/icons/icon-facebook.png' alt='Facebook' title='Facebook')
+          li.footer__share--icon
+            a(href='http://instagram.com' target='_blank' rel='noopener noreferrer')
+              img(src='./img/icons/icon-youtube.png' alt='YouTube' title='YouTube')
+          li.footer__share--icon
+            a(href='http://instagram.com' target='_blank' rel='noopener noreferrer')
+              img(src='./img/icons/icon-google.png' alt='Google' title='Google')
+  .footer__lower
+    .row
+      .col-1-of-3
+        h2.footer__lower--heading About Us
+        ul.footer__lower--list
+          li.footer__lower--item
+            a(href='') Vision &amp; Mission
+          li.footer__lower--item
+            a(href='') REVA Genesis
+          li.footer__lower--item
+            a(href='') News &amp; Events
+          li.footer__lower--item
+            a(href='') FAQs
+          li.footer__lower--item
+            a(href='') Blog
+      .col-1-of-3
+        h2.footer__lower--heading Programs
+        ul.footer__lower--list
+          li.footer__lower--item
+            a(href='') Campus Placement
+          li.footer__lower--item
+            a(href='') Training &amp; Placements
+          li.footer__lower--item
+            a(href='') Job Offers
+          li.footer__lower--item
+            a(href='') Company Profiles
+      .col-1-of-3
+        h2.footer__lower--heading Stay Connected
+        ul.footer__lower--list
+          li.footer__lower--item REVA University
+          li.footer__lower--item Rukmini Knowledge Park
+          li.footer__lower--item Kattigenahalli, Yelhanka
+          li.footer__lower--item Bangalore- 560064
+          li.footer__lower--item
+            img(src='./img/icons/icon-phone.png' alt='Phone No')
+            | +91-80-66226622
+          li.footer__lower--item
+            img(src='./img/icons/icon-mail.png' alt='Phone No')
+            | info@revacareerpad.com
+  .copyright
+    p.copyright__primary
+      | &copy; REVA CareerPad | REVA University
+    .sitemap
+      ul.sitemap__list
+        li.sitemap__list--item Privacy &amp; Terms
+        li.sitemap__list--item Careers
+        li.sitemap__list--item Sitemap
+        li.sitemap__list--item Developed by Immortal

@@ -1,16 +1,114 @@
-extends layout
-
-block content
-    h1 Login    
-    form(action="/login", method="post")
-        div.form-group
-            label(for='email') Email
-            input(type='text' id='email' placeholder='email' name='email')
-            br
-            label(for='password') Password
-            input(type='password' id='password' placeholder='password' name='password')
-            br
-            button.btn.btn-primary(type='submit') Log in
-
-    h1 Don't have an account? 
-        a(href="/register") Register..
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  meta(http-equiv='X-UA-Compatible' content='ie=edge')
+  link(href='https://fonts.googleapis.com/css?family=Lora|Roboto' rel='stylesheet')
+  link(rel='stylesheet' href='stylesheets/style.css')
+  link(rel='icon' type='image/png' href='img/favicon-32x32.png' sizes='32x32')
+  link(rel='icon' type='image/png' href='img/favicon-16x16.png' sizes='16x16')
+  title REVA Careerpad | Login
+// naigation area
+.navigation
+  .navigation__icon
+    img(src='img/logo.PNG' alt='REVA Careerpad Logo')
+  .navigation__nav
+    ul.navigation__list
+      li.navigation__item
+        a.navigation__link(href='/') Home
+      li.navigation__item
+        a.navigation__link(href='#') About Us
+      li.navigation__item
+        a.navigation__link(href='login')
+          | Student Panel
+          i.icofont-curved-down
+      li.navigation__item
+        a.navigation__link(href='#') Placement Offers
+      li.navigation__item
+        a.navigation__link(href='#') Placement Office
+// form area
+.login
+  .login__form
+    h2.login__form--heading Login With REVA Account
+    .login__form--main
+      form(action='' method='post')
+        label(for='email') Email/Username
+        br
+        input#userEmail(type='email' name='user_email' placeholder='dummymail@gmail.com')
+        br
+        label(for='password') Password
+        br
+        input#userPassword(type='password' name='user_password' placeholder='********')
+        br
+        input.btn.btn-primary(type='submit' value='Login Now')
+      h3 Are you a new member?
+      a.btn.btn-primary(href='register') Register Now
+// footer area
+.footer
+  .footer__upper
+    .row
+      .col-1-of-2.footer__upper--logo
+        img(src='./img/reva.jpg' alt='REVA University')
+      .col-1-of-2.footer__upper--share
+        ul.footer__share
+          li.footer__share--text.footer__share--icon Connect With US
+          li.footer__share--icon
+            a(href='http://instagram.com' target='_blank' rel='noopener noreferrer')
+              img(src='./img/icons/icon-instagram.png' alt='Instagram' title='Instagram')
+          li.footer__share--icon
+            a(href='http://instagram.com' target='_blank' rel='noopener noreferrer')
+              img(src='./img/icons/icon-facebook.png' alt='Facebook' title='Facebook')
+          li.footer__share--icon
+            a(href='http://instagram.com' target='_blank' rel='noopener noreferrer')
+              img(src='./img/icons/icon-youtube.png' alt='YouTube' title='YouTube')
+          li.footer__share--icon
+            a(href='http://instagram.com' target='_blank' rel='noopener noreferrer')
+              img(src='./img/icons/icon-google.png' alt='Google' title='Google')
+  .footer__lower
+    .row
+      .col-1-of-3
+        h2.footer__lower--heading About Us
+        ul.footer__lower--list
+          li.footer__lower--item
+            a(href='') Vision &amp; Mission
+          li.footer__lower--item
+            a(href='') REVA Genesis
+          li.footer__lower--item
+            a(href='') News &amp; Events
+          li.footer__lower--item
+            a(href='') FAQs
+          li.footer__lower--item
+            a(href='') Blog
+      .col-1-of-3
+        h2.footer__lower--heading Programs
+        ul.footer__lower--list
+          li.footer__lower--item
+            a(href='') Campus Placement
+          li.footer__lower--item
+            a(href='') Training &amp; Placements
+          li.footer__lower--item
+            a(href='') Job Offers
+          li.footer__lower--item
+            a(href='') Company Profiles
+      .col-1-of-3
+        h2.footer__lower--heading Stay Connected
+        ul.footer__lower--list
+          li.footer__lower--item REVA University
+          li.footer__lower--item Rukmini Knowledge Park
+          li.footer__lower--item Kattigenahalli, Yelhanka
+          li.footer__lower--item Bangalore- 560064
+          li.footer__lower--item
+            img(src='./img/icons/icon-phone.png' alt='Phone No')
+            | +91-80-66226622
+          li.footer__lower--item
+            img(src='./img/icons/icon-mail.png' alt='Phone No')
+            | info@revacareerpad.com
+  .copyright
+    p.copyright__primary
+      | &copy; REVA CareerPad | REVA University
+    .sitemap
+      ul.sitemap__list
+        li.sitemap__list--item Privacy &amp; Terms
+        li.sitemap__list--item Careers
+        li.sitemap__list--item Sitemap
+        li.sitemap__list--item Developed by Immortal
