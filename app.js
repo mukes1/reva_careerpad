@@ -30,7 +30,7 @@ app.use(sassMiddleware({
          src: __dirname + '/public/sass', 
          dest: __dirname + '/public/stylesheets',
          debug: true,
-         outputStyle: 'expanded',
+         outputStyle: 'compressed',
          prefix: '/stylesheets'
 }));
 
