@@ -1,122 +1,27 @@
-doctype html
-head
-  meta(charset='UTF-8')
-  meta(name='viewport' content='width=device-width, initial-scale=1.0')
-  meta(http-equiv='X-UA-Compatible' content='ie=edge')
-  link(href='https://fonts.googleapis.com/css?family=Lora|Roboto' rel='stylesheet')
-  link(rel='stylesheet' href='stylesheets/style.css')
-  link(rel='icon' type='image/png' href='img/favicon-32x32.png' sizes='32x32')
-  link(rel='icon' type='image/png' href='img/favicon-16x16.png' sizes='16x16')
-  title REVA Careerpad | Register
-// naigation area
-.navigation
-  .navigation__icon
-    img(src='img/logo.PNG' alt='REVA Careerpad Logo')
-  .navigation__nav
-    ul.navigation__list
-      li.navigation__item
-        a.navigation__link(href='/') Home
-      li.navigation__item
-        a.navigation__link(href='#') About Us
-      li.navigation__item
-        a.navigation__link(href='login')
-          | Student Panel
-          i.icofont-curved-down
-      li.navigation__item
-        a.navigation__link(href='#') Placement Offers
-      li.navigation__item
-        a.navigation__link(href='#') Placement Office
-// form area
-.register
-  .register__form
-    h2.register__form--heading Create REVA Account
-    .register__form--main
-      form(action='' method='post')
-        label(for='name') Enter Your Name
-        br
-        input#firstName(type='text' name='firstName' placeholder='First Name')
-        br
-        input#middleName(type='text' name='middleName' placeholder='Middle Name')
-        input#lastName(type='text' name='lastName' placeholder='Last Name')
-        br
-        label(for='email') Enter Email Address
-        input#email(type='email' name='email' placeholder='dummy@gmail.com')
-        label(for='password') Enter Password
-        input#password(type='password' name='password' placeholder='********')
-        label(for='confirmPassword') Confirm Password
-        input#confirmPassword(type='password' name='confirmPassword' placeholder='********')
-        input#notificationOption(type='checkbox' name='notificationOption' value='notificationOption')
-        | Opt-in for Notification
-        input#terms(type='checkbox' name='terms' value='terms')
-        | I agree to all the 
-        a(href='') Terms &amp; Conditions
-        input.btn.btn-primary(type='submit' value='Register Now')
-// footer area
-.footer
-  .footer__upper
-    .row
-      .col-1-of-2.footer__upper--logo
-        img(src='./img/reva.jpg' alt='REVA University')
-      .col-1-of-2.footer__upper--share
-        ul.footer__share
-          li.footer__share--text.footer__share--icon Connect With US
-          li.footer__share--icon
-            a(href='http://instagram.com' target='_blank' rel='noopener noreferrer')
-              img(src='./img/icons/icon-instagram.png' alt='Instagram' title='Instagram')
-          li.footer__share--icon
-            a(href='http://instagram.com' target='_blank' rel='noopener noreferrer')
-              img(src='./img/icons/icon-facebook.png' alt='Facebook' title='Facebook')
-          li.footer__share--icon
-            a(href='http://instagram.com' target='_blank' rel='noopener noreferrer')
-              img(src='./img/icons/icon-youtube.png' alt='YouTube' title='YouTube')
-          li.footer__share--icon
-            a(href='http://instagram.com' target='_blank' rel='noopener noreferrer')
-              img(src='./img/icons/icon-google.png' alt='Google' title='Google')
-  .footer__lower
-    .row
-      .col-1-of-3
-        h2.footer__lower--heading About Us
-        ul.footer__lower--list
-          li.footer__lower--item
-            a(href='') Vision &amp; Mission
-          li.footer__lower--item
-            a(href='') REVA Genesis
-          li.footer__lower--item
-            a(href='') News &amp; Events
-          li.footer__lower--item
-            a(href='') FAQs
-          li.footer__lower--item
-            a(href='') Blog
-      .col-1-of-3
-        h2.footer__lower--heading Programs
-        ul.footer__lower--list
-          li.footer__lower--item
-            a(href='') Campus Placement
-          li.footer__lower--item
-            a(href='') Training &amp; Placements
-          li.footer__lower--item
-            a(href='') Job Offers
-          li.footer__lower--item
-            a(href='') Company Profiles
-      .col-1-of-3
-        h2.footer__lower--heading Stay Connected
-        ul.footer__lower--list
-          li.footer__lower--item REVA University
-          li.footer__lower--item Rukmini Knowledge Park
-          li.footer__lower--item Kattigenahalli, Yelhanka
-          li.footer__lower--item Bangalore- 560064
-          li.footer__lower--item
-            img(src='./img/icons/icon-phone.png' alt='Phone No')
-            | +91-80-66226622
-          li.footer__lower--item
-            img(src='./img/icons/icon-mail.png' alt='Phone No')
-            | info@revacareerpad.com
-  .copyright
-    p.copyright__primary
-      | &copy; REVA CareerPad | REVA University
-    .sitemap
-      ul.sitemap__list
-        li.sitemap__list--item Privacy &amp; Terms
-        li.sitemap__list--item Careers
-        li.sitemap__list--item Sitemap
-        li.sitemap__list--item Developed by Immortal
+extends layout
+
+block content
+  //registration form area
+  .register
+    .register__form
+      h2.register__form--heading Create REVA Account
+      .register__form--main
+        form(action='/register' method='post')
+          label(for='name') Enter Your Name
+          br
+          input#firstName(type='text' name='firstName' placeholder='First Name')
+          br
+          input#lastName(type='text' name='lastName' placeholder='Last Name')
+          br
+          label(for='email') Enter Email Address
+          input#email(type='email' name='email' placeholder='Enter your email address')
+          label(for='password') Enter Password
+          input#password(type='password' name='password' placeholder='********')
+          label(for='confirmPassword') Confirm Password
+          input#confirmPassword(type='password' name='confirmPassword' placeholder='********')
+          input#notificationOption(type='checkbox' name='notificationOption' value='notificationOption')
+          | Opt-in for Notification
+          input#terms(type='checkbox' name='terms' value='terms')
+          | I agree to all the 
+          a(href='') Terms &amp; Conditions
+          input.btn.btn-primary(type='submit' value='Register Now')

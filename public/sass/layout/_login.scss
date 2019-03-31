@@ -1,0 +1,58 @@
+.login {
+    background-image: url('../img/loginBg.jpg');
+    height: 80vh;
+    margin-top: 10rem;
+
+    &__form {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-family: 'Roboto'sans-serif;
+
+        &--heading {
+            color: white;
+            font-size: 2.4rem;
+            margin: 4rem 0;
+            border-bottom: 1px solid white;
+            text-transform: uppercase;
+            font-weight: bolder;
+        }
+
+        &--main {
+            background: white;
+            font-weight: bolder;
+            color: black;
+            text-align: left;
+            padding: 1rem;
+            font-size: 2rem;
+            form {
+                label{
+                    
+                }
+
+                input{
+                    padding: 1rem 0;
+                    width: 100%;
+                    display: block;
+                    cursor: pointer;
+                    font-size: 1.8rem;
+                }
+            }
+
+            a {
+                text-decoration: none;
+                display: block;
+            }
+        }
+    }
+}
+
+.btn {
+    width: 100%;
+    text-align: center;
+    background-color: $color-primary;
+    font-size: 2rem;
+    color: white;
+    padding: 1rem;
+}

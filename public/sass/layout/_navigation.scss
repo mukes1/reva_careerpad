@@ -1,0 +1,39 @@
+.navigation{
+    margin: 1rem;
+    padding: 2rem;
+    font-family: 'Lora', serif;
+
+    &__icon {
+        float: left;
+
+    }
+
+    &__nav{
+        float: right;
+        text-transform: uppercase;
+    }
+    &__list{
+        list-style: none;
+        text-align: center;
+        padding: 2rem;
+    }
+    &__item{
+        display: inline-block;
+        margin: 1rem;
+        padding: 1rem;
+    }
+
+    &__link{
+        &:visited,
+        &:link{
+            font-size: 1.8rem;
+            font-weight: bolder;
+            text-decoration: none;
+            color: $color-primary;
+            
+        }
+        &:active{
+            border-bottom: 1px solid $color-primary;
+        }
+    }
+}

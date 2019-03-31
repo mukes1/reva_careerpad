@@ -1,0 +1,54 @@
+.header {
+    height: 80vh;
+    background-image: url(../img/cover.jpg);
+    background-size: cover;
+    position: relative;
+    margin-top: 10rem;
+    padding: 3rem;
+
+    &__title{
+
+        background-image: url(../img/primary-background.png);
+        height: 80vh;
+        background-repeat: no-repeat;
+    }
+
+    &__text{
+        
+        &--primary{
+            font-family: 'Roboto', sans-serif;
+            text-transform: uppercase;
+            position: absolute;
+            top: 25%;
+            left: 8%;
+            display: block;
+            letter-spacing: 0.2rem;
+            text-align: left;
+            color: white;
+            font-size: 4.8rem;
+            font-weight: bolder;
+            width: 38rem;
+        }
+    }
+
+    &__list{
+        list-style: none;
+        font-family: 'Roboto', sans-serif;
+        font-size: 3.0rem;
+        color: white;
+        text-transform: uppercase;
+        position: absolute;
+        top: 60%;
+        left: 8%;
+        
+        
+        &--text {
+            display: inline-block;
+            margin: 1rem;
+            padding: 1.5rem;
+            border: 1px solid white;
+        }
+
+
+    }
+}

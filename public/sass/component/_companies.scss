@@ -1,0 +1,23 @@
+.companies {
+    margin-top: 4rem;
+    padding: 2rem;
+    
+    &__heading {
+        text-align: center;
+        font-family: 'Roboto' sans-serif;
+        font-size: 2rem;
+        font-weight: 900;
+        line-height: 1.1;
+        text-transform: uppercase;
+        color: #4b4a4a;
+        margin-top: 2rem;
+    }
+
+    &__img {
+        margin-top: 2rem;   
+        &--inner {
+            width: 20rem;
+            margin: 2rem;
+        }
+    }
+}
