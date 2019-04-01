@@ -1,6 +1,5 @@
 extends layout
 
 block content
- .login
-   h1 'Welcome to your profile'
-   a(href="/profile/logout") Logout
+ .dashboard
+   h1 Welcome to your profile, #{user.firstName}!

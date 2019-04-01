@@ -4,15 +4,23 @@
     img(src='img/logo.PNG' alt='REVA Careerpad Logo')
   .navigation__nav
     ul.navigation__list
-      li.navigation__item
-        a.navigation__link(href='/') Home
-      li.navigation__item
-        a.navigation__link(href='#') About Us
-      li.navigation__item
-        a.navigation__link(href='login')
-          | Student Panel
-          i.icofont-curved-down
-      li.navigation__item
-        a.navigation__link(href='#') Placement Offers
-      li.navigation__item
-        a.navigation__link(href='#') Placement Office
+      if user == undefined
+        li.navigation__item
+          a.navigation__link(href='/') Home
+        li.navigation__item
+          a.navigation__link(href='#') About Us
+        li.navigation__item
+          a.navigation__link(href='login')
+            | Student Panel
+            i.icofont-curved-down
+        li.navigation__item
+          a.navigation__link(href='#') Placement Offers
+        li.navigation__item
+          a.navigation__link(href='#') Placement Office
+      else
+        li.navigation__item
+          a.navigation__link(href='/') Notifications
+        li.navigation__item
+          a.navigation__link(href='/') Offers
+        li.navigation__item
+          a.navigation__link(href='/login/logout') Logout

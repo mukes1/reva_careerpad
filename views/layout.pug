@@ -9,12 +9,12 @@ head
   link(rel='icon' type='image/png' href='img/favicon-16x16.png' sizes='16x16')
   title REVA Careerpad | Launch Your Career
 body
+  include ./template/nav.pug
+  block content
   if success_messages
    p(style='font-size: 1.8rem') #{success_messages}
   if error_messages
    p(style='font-size: 1.8rem') #{error_messages}
-  include ./template/nav.pug
   include ./template/header.pug
-  block content
   include ./template/footer.pug
   

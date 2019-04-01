@@ -10,14 +10,13 @@ const flash = require('connect-flash');
 const session = require('express-session');
 const mongoose = require('mongoose');
 const sass = require('node-sass-middleware');
-
+const config = require('./config/index');
 
 
 const indexRouter = require('./routes/index');
 const loginRouter = require('./routes/login');
 const registerRouter = require('./routes/register'); 
 const companiesRouter = require('./routes/companies');
-const profileRouter = require('./routes/profile');
 
 const app = express();
 
@@ -38,7 +37,8 @@ app.use(sassMiddleware({
 //database
 mongoose.Promise = global.Promise;
 try{
-  mongoose.connect("mongodb://localhost:27017/careerpad", { useNewUrlParser: true });
+  mongoose.connect(config.mongoUrl, { useNewUrlParser: true });
+  console.log("Connected to Database");
  
 }catch(err){
  console.log(err);
@@ -77,7 +77,7 @@ app.use('/', indexRouter);
 app.use('/login', loginRouter);
 app.use('/register', registerRouter);
 app.use('/companies', companiesRouter);
-app.use('/profile', profileRouter);
+
 
 
 // catch 404 and forward to error handler
