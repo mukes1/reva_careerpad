@@ -1,5 +1,58 @@
 extends layout
 
 block content
- .dashboard
-   h1 Welcome to your profile, #{user.firstName}!
+  .dashboard
+    .dashboard__sidebar
+      .dashboard__sidebar--profile
+        img.dashboard__sidebar--img(src='./img/icons/profilePlaceholder.png' alt='profile')
+        br
+        h1 #{user.firstName}
+      ul.dashboard__sidebar--list
+        li.dashboard__sidebar--item
+          a(href='#')
+            img(src='./img/icons/profile.png' alt='profile')
+            | Profile
+        li.dashboard__sidebar--item
+          a(href='#')
+            img(src='./img/icons/resume.png' alt='resume')
+            | Resume
+        li.dashboard__sidebar--item
+          a(href='#')
+            img(src='./img/icons/fa-history.png' alt='history')
+            | History
+    .dashboard__profile
+      ul.dashboard__profile--list
+        .row
+          .col-1-of-2
+            li.dashboard__profile--data
+              img(src='./img/icons/profile.png' alt='Username')
+              |  First Name: #{user.firstName}
+            li.dashboard__profile--data
+              img(src='./img/icons/profile.png' alt='Username')
+              |  Last Name: #{user.lastName}
+            li.dashboard__profile--data
+              img(src='./img/icons/srn.png' alt='SRN')
+              |  Student Registration Number
+            li.dashboard__profile--data
+              img(src='./img/icons/email_orange.png' alt='Email')
+              |  Email: #{user.email}
+          .col-1-of-2
+            li.dashboard__profile--data
+              img(src='./img/icons/fa-mobile-phone.png' alt='Contact')
+              |  Contact No
+            li.dashboard__profile--data
+              img(src='./img/icons/dob_icon.png' alt='Date of Birth')
+              |  Date of Birth
+            li.dashboard__profile--data
+              img(src='./img/icons/Address.png' alt='Address')
+              |  Address
+            li.dashboard__profile--data
+              img(src='./img/icons/password icon.png' alt='Change Password')
+              |  Change Password
+      .dashboard__profile--button
+        | Edit Profile 
+        img(src='./img/icons/fa-edit.png' alt='Edit')
+
+
+
+        

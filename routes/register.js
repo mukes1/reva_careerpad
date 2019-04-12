@@ -14,11 +14,11 @@ const userSchema = Joi.object().keys({
 });
 
 //render registration page
-router.get('/', (req, res, next)=>{
+router.get('/register', (req, res, next)=>{
     res.render('register', {title: 'Registration'});
 });
 
-router.post('/',async (req, res, next)=>{
+router.post('/register',async (req, res, next)=>{
     
     try{
         const result = Joi.validate(req.body, userSchema)
