@@ -1,6 +1,6 @@
 .register {
     background-image: url('../img/bg.jpg');
-    height: 120vh;
+    height: 140vh;
     margin-top: 10rem;
 
     &__form {
@@ -9,7 +9,6 @@
         left: 50%;
         transform: translate(-50%, -50%);
         font-family: 'Roboto'sans-serif;
-        margin-top: 20rem;
         width: 50rem;
         padding: 5rem;
 
@@ -33,11 +32,14 @@
             form {
                
                 input{
-                    padding: 1rem 0;
+                    padding: 1rem;
                     width: 100%;
+                    outline: none;
+                    border: none;
+                    border-bottom: 2px solid grey;
                     display: block;
                     cursor: pointer;
-                    font-size: 1.8rem;
+                    font-size: 2rem;
                 }
             }
 

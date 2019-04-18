@@ -1,28 +1,20 @@
 extends layout
 
 block content
-  include ./template/nav.pug
   //registration form area
   .register
     .register__form
       h2.register__form--heading Create REVA Account
       .register__form--main
         form(action='/register' method='post')
-          label(for='name') Enter Your Name
-          br
           input#firstName(type='text' name='firstName' placeholder='First Name')
           br
           input#lastName(type='text' name='lastName' placeholder='Last Name')
           br
-          label(for='email') Enter Email Address
           input#email(type='email' name='email' placeholder='Enter your email address')
-          label(for='password') Enter Password
-          input#password(type='password' name='password' placeholder='********')
-          label(for='confirmPassword') Confirm Password
-          input#confirmPassword(type='password' name='confirmPassword' placeholder='********')
-          input#notificationOption(type='checkbox' name='notificationOption' value='notificationOption')
-          | Opt-in for Notification
-          input#terms(type='checkbox' name='terms' value='terms')
-          | I agree to all the 
-          a(href='') Terms &amp; Conditions
+          br
+          input#password(type='password' name='password' placeholder='Password')
+          br
+          input#confirmPassword(type='password' name='confirmPassword' placeholder='Confirm Password')
+          br
           input.btn.btn-primary(type='submit' value='Register Now')

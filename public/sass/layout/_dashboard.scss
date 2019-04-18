@@ -73,6 +73,7 @@
             text-align: center;
             border: 1px solid blue;
             border-radius: 2rem;
+            outline: none;
 
             & img {
                 height: 1.5rem;
@@ -83,5 +84,9 @@
             background: grey;
             cursor: pointer;
         }  
+
+        &--form{
+              margin-top: 10rem;
+        } 
     }
 }

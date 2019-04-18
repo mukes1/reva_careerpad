@@ -17,6 +17,7 @@ const MongoDBStore = require('connect-mongodb-session')(session);
 const indexRouter = require('./routes/index');
 const loginRouter = require('./routes/login');
 const registerRouter = require('./routes/register');
+const profileRouter = require('./routes/profile');
 const companiesRouter = require('./routes/companies');
 
 const app = express();
@@ -53,7 +54,7 @@ mongoose.connect(config.mongoUrl, {
   useNewUrlParser: true
 }, (err) => {
   if(err){
-  console.log(err);
+  console.log("Database Connection Error!!");
   }else{
     console.log('Successfully connected to database');
   }
@@ -105,6 +106,7 @@ app.use('/', indexRouter);
 app.use(loginRouter);
 app.use(registerRouter);
 app.use(companiesRouter);
+app.use(profileRouter);
 
 
 
@@ -121,7 +123,6 @@ app.use(function (err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
 });
 
 module.exports = app;

@@ -7,15 +7,12 @@ block content
       h2.login__form--heading Login With REVA Account
       .login__form--main
         form(action='/login' method='post')
-          label(for='email') Email/Username
+          input#userEmail(type='email' name='email' placeholder='Enter your email' required)
           br
-          input#userEmail(type='email' name='email' placeholder='Enter your email')
+          input#userPassword(type='password' name='password' placeholder='Password' required)
           br
-          label(for='password') Password
+          input.btn.btn-primary(type='submit' value='LOGIN')
           br
-          input#userPassword(type='password' name='password' placeholder='********')
-          br
-          input.btn.btn-primary(type='submit' value='Login Now')
         h3 Are you a new member?
         a.btn.btn-primary(href='register') Register Now
 

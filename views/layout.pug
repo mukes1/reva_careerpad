@@ -12,9 +12,12 @@ body
   include ./template/nav.pug
   block content
   if success_messages
-   p(style='font-size: 1.8rem') #{success_messages}
+    p #{success_messages}
   if error_messages
-   p(style='font-size: 1.8rem') #{error_messages}
+    p #{error_messages}
+
   include ./template/header.pug
   include ./template/footer.pug
+  script(src='https://code.jquery.com/jquery-3.4.0.min.js' integrity='sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=' crossorigin='anonymous')
+
   

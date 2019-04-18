@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  .dashboard
+    .dashboard__sidebar
+      .dashboard__sidebar--profile
+        img.dashboard__sidebar--img(src='./img/icons/profilePlaceholder.png' alt='profile')
+        br
+        h1 #{user.firstName}
+      ul.dashboard__sidebar--list
+        li.dashboard__sidebar--item
+          a(href='profile')
+            img(src='./img/icons/profile.png' alt='profile')
+            | Profile
+        li.dashboard__sidebar--item
+          a(href='resume')
+            img(src='./img/icons/resume.png' alt='resume')
+            | Resume
+        li.dashboard__sidebar--item
+          a(href='#')
+            img(src='./img/icons/fa-history.png' alt='history')
+            | History
+    .dashboard__profile
+      

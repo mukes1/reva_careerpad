@@ -6,15 +6,16 @@ const session = require('express-session');
 require('../config/passport');
 
 //middleware to redirect to user profile if logged in
-const redirectProfile = (req, res, next)=>{
+/*const redirectProfile = (req, res, next)=>{
   if(req.isUnauthenticated()){
     next();
   }
   res.redirect('/profile');
 }
+*/
 
 /* GET login page  */
-router.get('/login', redirectProfile, function(req, res, next) {
+router.get('/login', function(req, res, next) {
   res.render('login', {title: 'Login'});
 });
 

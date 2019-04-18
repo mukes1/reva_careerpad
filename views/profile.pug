@@ -13,7 +13,7 @@ block content
             img(src='./img/icons/profile.png' alt='profile')
             | Profile
         li.dashboard__sidebar--item
-          a(href='#')
+          a(href='resume')
             img(src='./img/icons/resume.png' alt='resume')
             | Resume
         li.dashboard__sidebar--item
@@ -26,33 +26,72 @@ block content
           .col-1-of-2
             li.dashboard__profile--data
               img(src='./img/icons/profile.png' alt='Username')
-              |  First Name: #{user.firstName}
+              |  First Name #{user.firstName}
             li.dashboard__profile--data
               img(src='./img/icons/profile.png' alt='Username')
               |  Last Name: #{user.lastName}
             li.dashboard__profile--data
               img(src='./img/icons/srn.png' alt='SRN')
-              |  Student Registration Number
+              |  Student Registration Number: #{user.SRN}
             li.dashboard__profile--data
               img(src='./img/icons/email_orange.png' alt='Email')
               |  Email: #{user.email}
           .col-1-of-2
             li.dashboard__profile--data
               img(src='./img/icons/fa-mobile-phone.png' alt='Contact')
-              |  Contact No
+              |  Contact No: #{user.Contact}
             li.dashboard__profile--data
               img(src='./img/icons/dob_icon.png' alt='Date of Birth')
-              |  Date of Birth
+              |  Date of Birth: #{dob}
             li.dashboard__profile--data
               img(src='./img/icons/Address.png' alt='Address')
-              |  Address
+              |  Address: #{user.Address}
             li.dashboard__profile--data
               img(src='./img/icons/password icon.png' alt='Change Password')
               |  Change Password
-      .dashboard__profile--button
-        | Edit Profile 
-        img(src='./img/icons/fa-edit.png' alt='Edit')
+        button#myBtn.dashboard__profile--button Edit Profile
+        // The Modal
+        #myModal.modal
+          // Modal content
+          .modal__content
+            span.close &times;
+            .updateProfile
+              .updateProfile__form
+                h2.updateProfile__form--heading Update Your Profile
+                .updateProfile__form--main
+                  form(action='/updateProfile' method='post')
+                    input#firstName(type='text' name='firstName' placeholder='First Name')
+                    br
+                    input#lastName(type='text' name='lastName' placeholder='Last Name')
+                    br
+                    input#SRN(type="text" name="SRN" placeholder="Student Registration Number")
+                    br
+                    input#DOB(type="date" name="DOB" placeholder="Date of Birth")
+                    br
+                    input#Address(type="text" name="Address" placeholder="Address")
+                    br
+                    input#Contact(type="string" name="Contact" placeholder="Contact No.") 
+                    br
+                    input.btn.btn-primary(type='submit' value='Update Profile')
 
-
-
-        
+  script.
+    // Get the modal
+    var modal = document.getElementById('myModal');
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+    // When the user clicks on the button, open the modal
+    btn.onclick = function() {
+    modal.style.display = "block";
+    }
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+    modal.style.display = "none";
+    }
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+    if (event.target == modal) {
+    modal.style.display = "none";
+    }
+    }

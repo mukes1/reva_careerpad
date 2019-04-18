@@ -18,6 +18,30 @@ let userSchema = new Schema({
     password: {
         type: String,
         required: true
+    },
+    SRN: {
+        type: String,
+        match: /[a-zA-z0-9]/,
+        maxlength: 8,
+        default: ''
+    },
+    DOB: {
+        type: Date,
+        min: '1987-10-26',
+        max: Date.now,
+        default: ''
+    },
+    Address: {
+        type: String,
+        maxlength: 100,
+        default: ''
+    },
+    Contact: {
+        type: String,
+        match: /[0-9]/,
+        minlength: 10,
+        maxlength: 10,
+        default: null
     }
 }, {
     timestamps: {
