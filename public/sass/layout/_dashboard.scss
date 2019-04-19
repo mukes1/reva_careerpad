@@ -14,11 +14,13 @@
         color: white;
         padding: 1rem;
 
-        &--profile{
+        &--profile {
             text-align: center;
         }
 
         &--img {
+            height: 20rem;
+            width: 20rem;
             border-radius: 10rem;
             border: 1px solid white;
         }
@@ -33,7 +35,7 @@
         }
 
         &--item {
-            margin: 4rem  1rem;
+            margin: 4rem 1rem;
             padding: 1rem;
             list-style-type: none;
             text-align: center;
@@ -47,10 +49,10 @@
         }
     }
 
-    &__profile{
+    &__profile {
         padding: 2rem;
         background: white;
-        
+
         &--list {
             font-size: 2rem;
             list-style: none;
@@ -63,9 +65,8 @@
 
         }
 
-        &--button
-         {
-             float: right;
+        &--button {
+            float: right;
             width: 16rem;
             font-size: 1.6rem;
             padding: 1rem;
@@ -80,13 +81,17 @@
             }
         }
 
-        &--button:hover{
+        &--button:hover {
             background: grey;
             cursor: pointer;
-        }  
+        }
 
-        &--form{
-              margin-top: 10rem;
-        } 
+        &--form {
+            margin-top: 10rem;
+        }
+    }
+
+    &__resume {
+       
     }
 }

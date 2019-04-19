@@ -42,6 +42,10 @@ let userSchema = new Schema({
         minlength: 10,
         maxlength: 10,
         default: null
+    },
+    Avatar: {
+        type: String,
+        default: null
     }
 }, {
     timestamps: {

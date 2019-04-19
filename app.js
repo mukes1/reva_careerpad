@@ -14,6 +14,7 @@ const config = require('./config/index');
 const MongoDBStore = require('connect-mongodb-session')(session);
 
 
+
 const indexRouter = require('./routes/index');
 const loginRouter = require('./routes/login');
 const registerRouter = require('./routes/register');
@@ -77,13 +78,14 @@ app.use(sassMiddleware({
 }));
 
 app.use(express.static(path.join(__dirname, 'public')));
+app.use('/uploads',express.static(path.join(__dirname, 'uploads')));
 
 //session config
 app.use(session({
   name: 'sid',
   secret: 'codeworkrsecret',
   cookie: {
-    maxAge: 60000,
+    maxAge: 300000,
     sameSite: true
   },
   store: store,

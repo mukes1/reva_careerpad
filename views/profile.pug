@@ -4,7 +4,7 @@ block content
   .dashboard
     .dashboard__sidebar
       .dashboard__sidebar--profile
-        img.dashboard__sidebar--img(src='./img/icons/profilePlaceholder.png' alt='profile')
+        img.dashboard__sidebar--img(src=user.Avatar alt='profile')
         br
         h1 #{user.firstName}
       ul.dashboard__sidebar--list
@@ -59,7 +59,7 @@ block content
               .updateProfile__form
                 h2.updateProfile__form--heading Update Your Profile
                 .updateProfile__form--main
-                  form(action='/updateProfile' method='post')
+                  form(action='/updateProfile' enctype="multipart/form-data" method='post')
                     input#firstName(type='text' name='firstName' placeholder='First Name')
                     br
                     input#lastName(type='text' name='lastName' placeholder='Last Name')
@@ -72,6 +72,8 @@ block content
                     br
                     input#Contact(type="string" name="Contact" placeholder="Contact No.") 
                     br
+                    label(for='avatar') Upload Avatar
+                    input#myFile(type='file' name='Avatar' accept="image/*")
                     input.btn.btn-primary(type='submit' value='Update Profile')
 
   script.
