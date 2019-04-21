@@ -20,5 +20,114 @@ block content
           a(href='#')
             img(src='./img/icons/fa-history.png' alt='history')
             | History
-    .dashboard__resume
-      
+    .dashboard__profile
+      .dashboard__resume--buttons
+        button#myBtn Edit Resume
+        // The Modal
+        #myModal.modal
+          // Modal content
+          .modal__content
+            span.close &times;
+            .updateResume
+              .updateResume__form
+                h2.updateResume__form--heading Update Your Resume
+                .updateResume__form--main
+                  form(action='/updateResume' method="POST")
+                    label(for='Education') Education
+                    br
+                    input#degree(type='text' name='Degree' placeholder='Degree Name')
+                    input#degreeYear(type='number' name='DegreeYear' placeholder='Degree Completion year' )
+                    input#university(type='text' name='College' placeholder='University or College of Graduation')
+                    br
+                    label(for='Skills') Technical Skills
+                    br
+                    input#skill1(type='text' name='Skills' placeholder='Any Skills')
+                    input#skill2(type='text' name='Skills' placeholder='Any Skills')
+                    input#skill3(type='text' name='Skills' placeholder='Any Skills')
+                    input#skill4(type='text' name='Skills' placeholder='Any Skills')
+                    input#skill5(type='text' name='Skills' placeholder='Any Skills')
+                    input#skill6(type='text' name='Skills' placeholder='Any Skills')
+                    br
+                    label(for='Experience') Experience
+                    br
+                    input#experience(type='text' name='JobTitle' placeholder='Job Title')
+                    input#experienceYear(type='number' name='ExperienceYear' placeholder='Years of Experience' min='0' max='10')
+                    input#company(type='text' name='Company' placeholder='Company')
+                    br
+                    label(for='Experience') Project Details
+                    br
+                    input#project(type='text' name='ProjectTitle' placeholder='Project Title')
+                    input#projectDetail(type='textarea' name='ProjectDetails' placeholder='Project Details')
+                    br
+                    label(for='Skills') Interest and Hobbies
+                    br
+                    input#interest1(type='text' name='Interests' placeholder='Any Interest/Hobbies')
+                    input#interest2(type='text' name='Interests' placeholder='Any Interest/Hobbies')
+                    input#interest3(type='text' name='Interests' placeholder='Any Interest/Hobbies')
+                    input#interest4(type='text' name='Interests' placeholder='Any Interest/Hobbies')
+                    input#interest5(type='text' name='Interests' placeholder='Any Interest/Hobbies')
+                    br
+                    input.btn.btn-primary(type='submit' value='Update Resume')
+        form(action='/downloadResume' method='POST')
+          input(type='submit' value='Download Resume')
+      .dashboard__resume
+        .dashboard__resume--header
+          h1 #{user.firstName} #{user.lastName}
+          h2 #{user.Email}
+          h2 #{user.Contact}
+          h2 #{user.Address}
+        .dashboard__resume--line
+        .dashboard__resume--content
+          h1 Education
+          ul
+            li
+              div #{user.Resume[0].Degree} #{user.Resume[0].DegreeYear}
+              div #{user.Resume[0].College}
+        .dashboard__resume--line
+        .dashboard__resume--content
+          h1 Skills
+          ul
+            each val in user.Resume[0].Skills
+              li= val
+        .dashboard__resume--line
+        .dashboard__resume--content
+          h1 Experience
+          ul
+            li
+              div #{user.Resume[0].JobTitle} #{user.Resume[0].ExperienceYear}yrs
+              div #{user.Resume[0].Company}
+        .dashboard__resume--line
+        .dashboard__resume--content
+          h1 Project Details
+          ul
+            li
+              div #{user.Resume[0].ProjectTitle} 
+              div #{user.Resume[0].ProjectDetails}
+        .dashboard__resume--line
+        .dashboard__resume--content
+          h1 Other Professional Skills
+          ul
+            each val in user.Resume[0].Interests
+              li= val
+
+  script.
+    // Get the modal
+    var modal = document.getElementById('myModal');
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+    // When the user clicks on the button, open the modal
+    btn.onclick = function() {
+    modal.style.display = "block";
+    }
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+    modal.style.display = "none";
+    }
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+    if (event.target == modal) {
+    modal.style.display = "none";
+    }
+    }

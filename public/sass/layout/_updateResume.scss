@@ -1,0 +1,66 @@
+.updateResume {
+    background-image: url('../img/bg.jpg');
+    height: 100vh;
+    &__form {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-family: 'Roboto'sans-serif;
+        width: 80rem;
+        padding: 5rem;
+        margin-top: 4rem;
+        
+
+        &--heading {
+            color: white;
+            font-size: 2.4rem;
+            margin: 4rem 0;
+            border-bottom: 1px solid white;
+            text-transform: uppercase;
+            font-weight: bolder;
+            text-align: center;
+        }
+
+        &--main {
+            background: white;
+            font-weight: bolder;
+            color: black;
+            text-align: left;
+            width: 100%;
+            padding: 1rem;
+            font-size: 1.6rem;
+            form {
+                input{
+                    padding: 1rem;
+                    outline: none;
+                    border: none;
+                    border-bottom: 1px solid grey;
+                    cursor: pointer;
+                    font-size: 1.6rem;
+                    margin: 0.5rem;
+                }
+
+                label{
+                    display: inline-block;
+                    margin-top: 0.5rem;
+                }
+
+            }
+
+            a {
+                text-decoration: none;
+                display: block;
+            }
+        }
+    }
+}
+
+.btn {
+    width: 100%;
+    text-align: center;
+    background-color: $color-primary;
+    font-size: 2rem;
+    color: white;
+    padding: 1rem;
+}

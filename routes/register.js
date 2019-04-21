@@ -42,6 +42,7 @@ router.post('/register',async (req, res, next)=>{
         result.value.password = hash;
 
         const newUser = await new User(result.value);
+        console.log(newUser);
         await newUser.save();
         
         req.flash('success_messages', 'Registration succesfull, go ahead and login');

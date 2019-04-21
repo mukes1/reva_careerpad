@@ -1,0 +1,52 @@
+doctype html
+head
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    meta(http-equiv='X-UA-Compatible' content='ie=edge')
+    link(href='https://fonts.googleapis.com/css?family=Lora|Roboto' rel='stylesheet')
+    link(rel='stylesheet' href='stylesheets/icofont.min.css')
+    link(rel='stylesheet' href='stylesheets/style.css')
+    link(rel='icon' type='image/png' href='img/favicon-32x32.png' sizes='32x32')
+    link(rel='icon' type='image/png' href='img/favicon-16x16.png' sizes='16x16')
+    title REVA Careerpad | Resume
+body
+    .dashboard__profile
+        .dashboard__resume
+            .dashboard__resume--header
+                h1 #{user.firstName} #{user.lastName}
+                h2 #{user.Email}
+                h2 #{user.Contact}
+                h2 #{user.Address}
+            .dashboard__resume--line
+            .dashboard__resume--content
+                h1 Education
+                ul
+                    li
+                        div #{user.Resume[0].Degree} #{user.Resume[0].DegreeYear}
+                        div #{user.Resume[0].College}
+            .dashboard__resume--line
+            .dashboard__resume--content
+                h1 Skills
+                ul
+                    each val in user.Resume[0].Skills
+                        li= val
+            .dashboard__resume--line
+            .dashboard__resume--content
+                h1 Experience
+                ul
+                    li
+                        div #{user.Resume[0].JobTitle} #{user.Resume[0].ExperienceYear}yrs
+                        div #{user.Resume[0].Company}
+            .dashboard__resume--line
+            .dashboard__resume--content
+                h1 Project Details
+                ul
+                    li
+                        div #{user.Resume[0].ProjectTitle} 
+                        div #{user.Resume[0].ProjectDetails}
+            .dashboard__resume--line
+            .dashboard__resume--content
+                h1 Other Professional Skills
+                ul
+                    each val in user.Resume[0].Interests
+                        li= val

@@ -56,6 +56,7 @@
         &--list {
             font-size: 2rem;
             list-style: none;
+            margin-top: 5rem;
         }
 
         &--data {
@@ -69,21 +70,29 @@
             float: right;
             width: 16rem;
             font-size: 1.6rem;
-            padding: 1rem;
+            font-weight: 600;
             text-transform: uppercase;
-            text-align: center;
-            border: 1px solid blue;
-            border-radius: 2rem;
-            outline: none;
+            text-decoration: none;
+            border: none;
+            outline: blue;
+            cursor: pointer;
+            color: white;
+            background: $color-primary;
+            padding: 0.5rem;
+            margin: 0.5rem;
 
             & img {
                 height: 1.5rem;
             }
+
+            
         }
 
         &--button:hover {
-            background: grey;
-            cursor: pointer;
+            padding: 0.6rem;
+            border: 1px solid rgb(201, 238, 255);
+            transition: all ease-out;
+            background: $color-secondary;
         }
 
         &--form {
@@ -92,6 +101,75 @@
     }
 
     &__resume {
-       
+
+        &--buttons {
+            float: right;
+
+
+            & button,
+            & input[type="submit"]
+            {
+                font-size: 1.6rem;
+                font-weight: 600;
+                text-transform: uppercase;
+                text-decoration: none;
+                border: none;
+                outline: blue;
+                cursor: pointer;
+                color: white;
+                background: $color-primary;
+                padding: 0.5rem;
+                margin: 0.5rem;
+            }
+
+            & button:hover,
+            & input[type="submit"]:hover{
+                padding: 0.6rem;
+                border: 1px solid rgb(201, 238, 255);
+                transition: all ease-out;
+                background: $color-secondary;
+            }
+        }
+
+        &--header {
+            margin-top: 5rem;
+            padding: 0 1rem;
+
+            & h1 {
+                font-size: 1.8rem;
+            }
+
+            & h2 {
+                color: grey;
+            }
+        }
+
+        &--line {
+            padding: 0 1rem;
+            margin: 1rem 0;
+            width: 100%;
+            height: 0.1rem;
+            border: 1px solid rgb(211, 210, 210);
+        }
+
+        &--content {
+            padding: 1.5rem;
+            display: grid;
+            grid-template-columns: 30% 70%;
+
+            &h1 {
+                font-size: 1.8rem;
+                float: left;
+            }
+
+            & ul {
+                font-size: 1.6rem;
+                list-style: none;
+
+                & li {
+                    padding: 0 1rem;
+                }
+            }
+        }
     }
 }

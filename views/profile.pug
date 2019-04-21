@@ -4,7 +4,7 @@ block content
   .dashboard
     .dashboard__sidebar
       .dashboard__sidebar--profile
-        img.dashboard__sidebar--img(src=user.Avatar alt='profile')
+        img.dashboard__sidebar--img(src=user.Avatar alt='profile picture')
         br
         h1 #{user.firstName}
       ul.dashboard__sidebar--list
@@ -21,6 +21,7 @@ block content
             img(src='./img/icons/fa-history.png' alt='history')
             | History
     .dashboard__profile
+      button#myBtn.dashboard__profile--button Edit Profile
       ul.dashboard__profile--list
         .row
           .col-1-of-2
@@ -49,7 +50,6 @@ block content
             li.dashboard__profile--data
               img(src='./img/icons/password icon.png' alt='Change Password')
               |  Change Password
-        button#myBtn.dashboard__profile--button Edit Profile
         // The Modal
         #myModal.modal
           // Modal content

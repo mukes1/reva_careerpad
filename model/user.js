@@ -2,6 +2,19 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const bcrypt = require('bcryptjs')
 
+let resumeSchema = new Schema({
+    Degree: {type: String, default: ''},
+    DegreeYear: {type: Number, default:''},
+    College: {type: String, default: ''},
+    Skills: {type: Array, default: ''},
+    JobTitle: {type: String, default: ''},
+    ExperienceYear: {type: Number, default: ''},
+    Company: {type: String, default: ''},
+    ProjectTitle: {type: String, default: ''},
+    ProjectDetails: {type: String, default: ''},
+    Interests: {type: Array, default: ''},
+    });
+
 let userSchema = new Schema({
     firstName: {
         type: String,
@@ -45,8 +58,9 @@ let userSchema = new Schema({
     },
     Avatar: {
         type: String,
-        default: null
-    }
+        default: 'uploads/profilePlaceholder.png'
+    },
+    Resume: [resumeSchema]
 }, {
     timestamps: {
         createdAt: 'createdAt',
@@ -57,28 +71,30 @@ let userSchema = new Schema({
 const User = mongoose.model('User', userSchema);
 module.exports = User;
 
-module.exports.getUserById = (id, callback)=>{
+module.exports.getUserById = (id, callback) => {
     User.findById(id, callback);
 };
 
-module.exports.getUserByEmail = (email, callback)=>{
-    let query = { email : email};
+module.exports.getUserByEmail = (email, callback) => {
+    let query = {
+        email: email
+    };
     User.findOne(query, callback);
 };
 
-module.exports.validatePassword = (candidatePassword, hash, callback)=>{
-    bcrypt.compare(candidatePassword, hash, function(err, isMatch) {
-        callback(null,isMatch);
+module.exports.validatePassword = (candidatePassword, hash, callback) => {
+    bcrypt.compare(candidatePassword, hash, function (err, isMatch) {
+        callback(null, isMatch);
     });
 };
 
 
 
 module.exports.hashPassword = async (password) => {
-    try{
+    try {
         const salt = await bcrypt.genSalt(0);
         return await bcrypt.hash(password, salt);
-    }catch(error){
+    } catch (error) {
         throw new Error('Hashing Failed', error);
     }
 }
