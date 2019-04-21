@@ -1,23 +1,39 @@
 .companies {
     margin-top: 4rem;
     padding: 2rem;
-    
+    text-align: center;
+    @include respond-to(handhelds) {
+        margin-top: 2rem;
+        padding: 1rem;
+    }
+
     &__heading {
         text-align: center;
-        font-family: 'Roboto' sans-serif;
+        font-family: 'Roboto'sans-serif;
         font-size: 2rem;
         font-weight: 900;
         line-height: 1.1;
         text-transform: uppercase;
         color: #4b4a4a;
         margin-top: 2rem;
+
+        @include respond-to(handhelds) {
+            margin-top: 1rem;
+            font-size: 1.4rem;
+        }
     }
 
     &__img {
-        margin-top: 2rem;   
         &--inner {
+            margin: 4rem 0;
             width: 20rem;
-            margin: 2rem;
+            height: 8rem;
+
+            @include respond-to(handhelds) {
+                margin: 1rem;
+                width: 10rem;
+                height: 4rem;
+            }
         }
     }
 }

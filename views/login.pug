@@ -3,7 +3,7 @@ extends layout
 block content
   // form area
   .login
-    .login__form
+    //-.login__form
       h2.login__form--heading Login With REVA Account
       .login__form--main
         form(action='/login' method='post')
@@ -15,4 +15,20 @@ block content
           br
         h3 Are you a new member?
         a.btn.btn-primary(href='register') Register Now
+    .wrapper.fadeInDown
+      #formContent
+        // Tabs Titles
+        // Icon
+        .fadeIn.first
+          img#icon(src='img/logo.PNG' alt='User Icon')
+        // Login Form
+        form(action='/login' method='post')
+          input#email.fadeIn.second(type='email' name='email' placeholder='Email')
+          input#password.fadeIn.third(type='password' name='password' placeholder='Password')
+          input.fadeIn.fourth(type='submit' value='Log In')
+          h2 Are you a new member?
+          a.underlineHover(href='register') Register Now
+        // Remind Passowrd
+        #formFooter
+          a.underlineHover(href='/') Go Back to Home
 

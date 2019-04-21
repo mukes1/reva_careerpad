@@ -2,13 +2,12 @@
     font-family: 'Roboto' sans-serif;
     color: white;
     padding: 1rem;
-    height: 40rem;
-    width: 35rem;
     box-shadow: 0 1.5rem 4rem rgba(black, .15);
 
     &__img {
+        padding-bottom: 1rem;
          &--inner {
-             width: 33rem;
+             width: 100%;
          }
     }
 
@@ -18,16 +17,27 @@
         padding: 1rem;
         text-transform: uppercase;
         
+        @include respond-to(hadnhelds){
+            padding: 0.5rem;
+        }
 
         &--primary {
             font-weight: bolder;
             font-size: 2.4rem;
+
+            @include respond-to(handhelds){
+                font-size: 1.5rem;
+            }
         }
 
 
         &--secondary {
             font-weight: 400;
             font-size: 2.0rem;
+
+            @include respond-to(handhelds){
+                font-size: 1.2rem;
+            }
         }
     }
 
@@ -42,5 +52,8 @@
         text-decoration: none;
         color: white;
         font-size: 2.4rem;
+        @include respond-to(handhelds){
+            font-size: 1.5rem;
+        }
     }
 }

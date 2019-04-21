@@ -1,20 +1,40 @@
 extends layout
 
 block content
-  //registration form area
-  .register
-    .register__form
-      h2.register__form--heading Create REVA Account
-      .register__form--main
+  //- registration form area
+    .register
+      .register__form
+        h2.register__form--heading Create REVA Account
+        .register__form--main
+          form(action='/register' method='post')
+            input#firstName.fadeIn.second(type='text' name='firstName' placeholder='First Name')
+            br
+            input#lastName.fadeIn.second(type='text' name='lastName' placeholder='Last Name')
+            br
+            input#email.fadeIn.third(type='email' name='email' placeholder='Enter your email address')
+            br
+            input#password.fadeIn.fourth(type='password' name='password' placeholder='Password')
+            br
+            input#confirmPassword.fadeIn.fourth(type='password' name='confirmPassword' placeholder='Confirm Password')
+            br
+            input.fadeIn.fourth(type='submit' value='Register Now')
+  .login
+    .wrapper.fadeInDown
+      #formContent
+        // Tabs Titles
+        // Icon
+        .fadeIn.first
+          img#icon(src='img/logo.PNG' alt='User Icon')
+          // Registration Form
         form(action='/register' method='post')
-          input#firstName(type='text' name='firstName' placeholder='First Name')
-          br
-          input#lastName(type='text' name='lastName' placeholder='Last Name')
-          br
-          input#email(type='email' name='email' placeholder='Enter your email address')
-          br
-          input#password(type='password' name='password' placeholder='Password')
-          br
-          input#confirmPassword(type='password' name='confirmPassword' placeholder='Confirm Password')
-          br
-          input.btn.btn-primary(type='submit' value='Register Now')
+          input#firstName.fadeIn.second(type='text' name='firstName' placeholder='First Name')
+          input#lastName.fadeIn.second(type='text' name='lastName' placeholder='Last Name')
+          input#email.fadeIn.third(type='email' name='email' placeholder='Enter your email address')
+          input#password.fadeIn.fourth(type='password' name='password' placeholder='Password')
+          input#confirmPassword.fadeIn.fourth(type='password' name='confirmPassword' placeholder='Confirm Password')
+          input.fadeIn.fourth(type='submit' value='Register Now')
+          h2 Already have an account?
+          a.underlineHover(href='login') Login Now
+          // Remind Passowrd
+        #formFooter
+          a.underlineHover(href='/') Go Back to Home

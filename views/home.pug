@@ -1,38 +1,39 @@
 extends layout
 
 block content
-  .header
-    .header__title
+  // cover page
+  .header.jumbotron.jumbotron-fluid
+    .header__text
       h1.header__text--primary Welcome To Reva Careerpad
-      ul.header__list
-        li.header__list--text Explore..
-        li.header__list--text Get App
+      ul
+        li.header__text--list Explore..
+        li.header__text--list Get Placed..
 
   include ./components/tabs.pug
   include ./components/breadcrumbs.pug
   include ./components/cards.pug
 
-  .companies
+  .companies.container
     .companies__heading
       h1 Placement at Reva
     .row.companies__img
-      .col-1-of-4
+      .col.col-sm-4.md-auto.col-lg-3
         img.companies__img--inner(src='./img/biocon.png' alt='Biocon')
-      .col-1-of-4
+      .col.col-sm-4.md-auto.col-lg-3
         img.companies__img--inner(src='./img/amazon.png' alt='Capgemini')
-      .col-1-of-4
+      .col.col-sm-4.md-auto.col-lg-3
         img.companies__img--inner(src='./img/tata.png' alt='Amazon')
-      .col-1-of-4
+      .col.col-sm-4.md-auto.col-lg-3
         img.companies__img--inner(src='./img/capgemini.png' alt='tata')
-  .companies
+  .companies.container
     .companies__heading
       h1 Industry Collaboration
     .row.companies__img
-      .col-1-of-4
+      .col.col-sm-4.md-auto.col-lg-3
         img.companies__img--inner(src='./img/vmware.png' alt='vmware')
-      .col-1-of-4
+      .col.col-sm-4.md-auto.col-lg-3
         img.companies__img--inner(src='./img/ibm.png' alt='IBM')
-      .col-1-of-4
+      .col.col-sm-4.md-auto.col-lg-3
         img.companies__img--inner(src='./img/intel.png' alt='Intel')
-      .col-1-of-4
+      .col.col-sm-4.md-auto.col-lg-3
         img.companies__img--inner(src='./img/chipware.png' alt='chipware')

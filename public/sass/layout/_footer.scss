@@ -1,12 +1,15 @@
 .footer {
     background-color: black;
     text-align: left;
-    margin: 1rem 0;
-    padding: 2rem 0;
+    padding: 1rem;
 
     &__upper{
         border-bottom: 3px solid white;
         padding: 1rem 0;
+
+        &--logo {
+            float: left;
+        }
 
         &--share{
             padding: 1rem;
@@ -15,17 +18,26 @@
 
     &__share {
         list-style: none;
+        float: right;
+
         &--text {
             color: white;
             font-family: 'Roboto' sans-serif;
             font-weight: bolder;
             font-size: 2.4rem;
             text-transform: uppercase;
+            text-align: center;
 
+            @include respond-to(handhelds){
+                font-size: 1.4rem;
+            }
         }
          &--icon {
              display: inline;
-             margin: 1rem 1rem;
+             @include respond-to(handhelds){
+                
+                padding: 1rem;
+            }
          }
     }
 
@@ -34,11 +46,17 @@
         font-family: 'Roboto' sans-serif;
         text-align: center;
 
+        @include respond-to(handhelds){
+            padding: 1rem;
+        }
+
         &--heading {
             color: white;
             font-size: 2.4rem;
             font-weight: bold;
-        
+            @include respond-to(handhelds){
+               font-size: 1.4rem;
+            }
         }
 
         &--list {
@@ -55,6 +73,27 @@
                 text-decoration: none;
                 color: white;
             }
+
+            @include respond-to(handhelds){
+                font-size: 1rem;
+                padding: 0;
+             }
+
+             @include respond-to(medium-screens){
+                font-size: 1.5rem;
+                padding: 0;
+             }
         }
+    }
+    &__copyright {
+        font-size: 1.8rem;
+        color: white;
+        text-transform: uppercase;
+
+        @include respond-to(handhelds){
+            font-size: 1rem;
+            text-align: center;
+        }
+
     }
 }

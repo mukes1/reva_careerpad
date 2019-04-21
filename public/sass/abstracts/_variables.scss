@@ -2,7 +2,6 @@ $color-primary : #F85422;
 
 $color-secondary: #e23617;
 
-// GRID
-$grid-width: 114rem;
-$gutter-vertical: 8rem;
-$gutter-horizontal: 6rem;
+//break-points for media queries
+$break-small: 576px;
+$break-large: 1024px;
