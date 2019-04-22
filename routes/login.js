@@ -21,12 +21,13 @@ router.get('/login', function(req, res, next) {
 
 
 //validate login
+
 router.post('/login', passport.authenticate('local', { successFlash: true, failureRedirect: '/login', failureFlash: true, failureMessage: 'Login Credentials Problem'}), (req,res,next)=>{
   req.flash('success_messages','Login Successful');
   req.session.save(()=>{
     res.redirect('/profile');
   });
-});
+})
 
 
 module.exports = router;

@@ -77,38 +77,41 @@ block content
           h2 #{user.Contact}
           h2 #{user.Address}
         .dashboard__resume--line
-        .dashboard__resume--content
-          h1 Education
-          ul
-            li
-              div #{user.Resume[0].Degree} #{user.Resume[0].DegreeYear}
-              div #{user.Resume[0].College}
-        .dashboard__resume--line
-        .dashboard__resume--content
-          h1 Skills
-          ul
-            each val in user.Resume[0].Skills
-              li= val
-        .dashboard__resume--line
-        .dashboard__resume--content
-          h1 Experience
-          ul
-            li
-              div #{user.Resume[0].JobTitle} #{user.Resume[0].ExperienceYear}yrs
-              div #{user.Resume[0].Company}
-        .dashboard__resume--line
-        .dashboard__resume--content
-          h1 Project Details
-          ul
-            li
-              div #{user.Resume[0].ProjectTitle} 
-              div #{user.Resume[0].ProjectDetails}
-        .dashboard__resume--line
-        .dashboard__resume--content
-          h1 Other Professional Skills
-          ul
-            each val in user.Resume[0].Interests
-              li= val
+        if user.Resume[0] === undefined
+          h1 Update Resume to See Details
+        else
+          .dashboard__resume--content
+            h1 Education
+            ul
+              li
+                div #{user.Resume[0].Degree} #{user.Resume[0].DegreeYear}
+                div #{user.Resume[0].College}
+          .dashboard__resume--line
+          .dashboard__resume--content
+            h1 Skills
+            ul
+              each val in user.Resume[0].Skills
+                li= val
+          .dashboard__resume--line
+          .dashboard__resume--content
+            h1 Experience
+            ul
+              li
+                div #{user.Resume[0].JobTitle} #{user.Resume[0].ExperienceYear}yrs
+                div #{user.Resume[0].Company}
+          .dashboard__resume--line
+          .dashboard__resume--content
+            h1 Project Details
+            ul
+              li
+                div #{user.Resume[0].ProjectTitle} 
+                div #{user.Resume[0].ProjectDetails}
+          .dashboard__resume--line
+          .dashboard__resume--content
+            h1 Other Professional Skills
+            ul
+              each val in user.Resume[0].Interests
+                li= val
 
   script.
     // Get the modal

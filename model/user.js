@@ -42,7 +42,7 @@ let userSchema = new Schema({
         type: Date,
         min: '1987-10-26',
         max: Date.now,
-        default: ''
+        default: Date.now
     },
     Address: {
         type: String,

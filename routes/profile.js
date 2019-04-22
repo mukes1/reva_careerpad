@@ -63,19 +63,22 @@ const sUpload = upload.single('Avatar');
 */
 
 //endpoint for profile
+
 router.get('/profile', (req, res, next) => {
-  req.flash('success_messages', 'Login Successful');
   res.render('profile', {
     title: 'Profile',
     user: req.user,
     dob: moment(req.user.DOB).format('YYYY-MM-DD')
   });
+  
 });
+
 
 
 //endpoint for resume upload
 router.get('/resume', (req, res, next) => {
   try {
+    console.log(req.user.Resume);
     res.render('resume', {
       title: 'Upload Resume',
       user: req.user
