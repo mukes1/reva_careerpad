@@ -1,0 +1,13 @@
+extends layout
+
+block content
+    include ./template/nav.pug
+    .container.placement__profile
+        .row
+            .col
+                img.placement__profile--img(src='img/offer.png' alt='Placement Picture')
+            .col
+                h1.placement__profile--title Placment Title
+                p.placement__profile--description Placement Description
+                p.placement__profile--eligibility Placement Eligibility
+                button.btn.btn-primary.btn-lg.placement__profile--button(href='#') Apply Now
