@@ -1,0 +1,22 @@
+extends ../adminLayout
+
+block content
+  // form area
+  .login
+    .wrapper.fadeInDown
+      #formContent
+        // Tabs Titles
+        // Icon
+        .fadeIn.first
+          img#icon(src='../img/logo.PNG' alt='User Icon')
+          h1 Welcome Admin
+        // Login Form
+        form(action='/login' method='post')
+          input#email.fadeIn.second(type='email' name='email' placeholder='Email')
+          input#password.fadeIn.third(type='password' name='password' placeholder='Password')
+          input.fadeIn.fourth(type='submit' value='Log In')
+        
+        // Remind Passowrd
+        #formFooter
+          a.underlineHover(href='/') Go Back to Home
+

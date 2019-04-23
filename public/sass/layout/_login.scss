@@ -20,7 +20,7 @@
 
         &--main {
             background: white;
-            font-weight: bolder;
+            font-weight: bolder;  
             color: black;
             text-align: left;
             padding: 1rem;
@@ -72,7 +72,7 @@
     background-image: url('../img/loginBg.jpg');
     background-size: cover;
     font-family: "Poppins", sans-serif;
-    height: 100vh;
+    height: 80vh;
 
     & form{
       margin-top: 2rem;
@@ -215,7 +215,7 @@
   input[type=password]::placeholder,
   input[type=email]::placeholder,
   input[type=text]::placeholder {
-    color: #cccccc;
+    color: #707070;
   }
   
   

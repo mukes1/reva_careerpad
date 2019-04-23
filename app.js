@@ -20,6 +20,7 @@ const loginRouter = require('./routes/login');
 const registerRouter = require('./routes/register');
 const profileRouter = require('./routes/profile');
 const companiesRouter = require('./routes/placements');
+const adminRouter = require('./routes/placementOffice');
 
 const app = express();
 
@@ -109,6 +110,7 @@ app.use(loginRouter);
 app.use(registerRouter);
 app.use(companiesRouter);
 app.use(profileRouter);
+app.use(adminRouter);
 
 
 
