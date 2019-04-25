@@ -19,6 +19,7 @@ const storage = multer.diskStorage({
   }
 });
 
+
 const upload = multer({
   storage: storage,
   limits: {
@@ -55,12 +56,12 @@ const sUpload = upload.single('Avatar');
 
 //middleware to redirect to login page if not logged in
 /*const redirectLogin = (req, res, next) => {
-  if (req.isAuthenticated()) {
+  if (req.user !== undefined) {
     next();
+  } else {
+    res.redirect('/login');
   }
-  res.redirect('/login');
-}
-*/
+}*/
 
 //endpoint for profile
 
@@ -70,7 +71,7 @@ router.get('/profile', (req, res, next) => {
     user: req.user,
     dob: moment(req.user.DOB).format('YYYY-MM-DD')
   });
-  
+
 });
 
 

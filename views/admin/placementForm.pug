@@ -1,0 +1,62 @@
+extends layouts/_layout.pug
+
+block variables
+    - var activePage = 'add-placement'
+    - var activeGroup = 'placements'
+
+block title
+    title Add Placement- CareerPad
+
+block content
+    .app-title
+        div
+            h1
+                i.fa.fa-edit
+                |  Add Placement
+            p Add placements to REVA Careerpad
+
+        ul.app-breadcrumb.breadcrumb
+            li.breadcrumb-item
+                i.fa.fa-home.fa-lg
+            li.breadcrumb-item
+                | Placements
+            li.breadcrumb-item
+                a(href="/addPlacement") Add Placements
+
+    .row
+        .col-lg-6
+            .tile
+                .row
+                    .col-sm-12
+                        form(action='/addPlacement' method='post' enctype="multipart/form-data")
+                            .form-group
+                                label.col-form-label.col-form-label-lg(for='placementTitle') Placement Title
+                                input#inputLarge.form-control.form-control-lg(type='text' name='placementTitle')
+                            
+                            .form-group
+                                label.col-form-label.col-form-label-lg(for='placementCompany') Company
+                                input#inputLarge.form-control.form-control-lg(type='text' name='placementCompany')
+
+                            .form-group
+                                label(for='placementEligibility') Eligible Departments(select multiple)
+                                select#exampleSelect2.form-control(multiple='' name='placementEligibility')
+                                    option(value='BCA') BCA
+                                    option(value='MCA') MCA
+                                    option(value='MS') MS
+                                    option(value='BBA') BBA
+                                    option(value='BscCC') BscCC
+                            .form-group
+                                label(for='placementDetails') Placement Details
+                                textarea#exampleTextarea.form-control(rows='3' name='placementDetails')
+
+                            .form-group
+                                label.col-form-label.col-form-label-lg(for='placementDeadline') Application Deadline
+                                input#inputLarge.form-control.form-control-lg(type='date' name='placementDeadline')
+
+                            .form-group
+                                label(for='placementPicture') Placement Picture
+                                input#exampleInputFile.form-control-file(type='file', aria-describedby='fileHelp' name='placementPicture')
+                                small#fileHelp.form-text.text-muted
+                                    | Upload placement related photo | Less than 2MB
+                            .tile-footer
+                                input.btn.btn-primary(type='submit' value='Add Placement')    

@@ -11,9 +11,9 @@ block content
           img#icon(src='../img/logo.PNG' alt='User Icon')
           h1 Welcome Admin
         // Login Form
-        form(action='/login' method='post')
-          input#email.fadeIn.second(type='email' name='email' placeholder='Email')
-          input#password.fadeIn.third(type='password' name='password' placeholder='Password')
+        form(action='/adminLogin' method='post')
+          input#employeeEmail.fadeIn.second(type='email' name='employeeEmail' placeholder='Employee Email')
+          input#password.fadeIn.third(type='password' name='employeePassword' placeholder='Password')
           input.fadeIn.fourth(type='submit' value='Log In')
         
         // Remind Passowrd

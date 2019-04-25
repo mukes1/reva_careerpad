@@ -1,0 +1,25 @@
+extends ../adminLayout
+
+block content
+    // form area
+    .register
+        .wrapper.fadeInDown
+            #formContent
+                // Tabs Titles
+                // Icon
+                .fadeIn.first
+                    img#icon(src='../img/logo.PNG' alt='User Icon')
+                    h1 Register Admin Account
+                    // Registration Form
+                form(action='/adminRegister' method='post')
+                    input#employeeName.fadeIn.second(type='text' name='employeeName' placeholder='Employee Full Name')
+                    input#employeeId.fadeIn.second(type='text' name='employeeId' placeholder='EmployeeId')
+                    input#employeeEmail.fadeIn.third(type='email' name='employeeEmail' placeholder='Enter your email address')
+                    input#employeePassword.fadeIn.fourth(type='password' name='employeePassword' placeholder='Password')
+                    input#confirmPassword.fadeIn.fourth(type='password' name='confirmPassword' placeholder='Confirm Password')
+                    input.fadeIn.fourth(type='submit' value='Register Now')
+                    h2 Already have an account?
+                    a.underlineHover(href='adminLogin') Login Now
+                    // Remind Passowrd
+                #formFooter
+                    a.underlineHover(href='/') Go Back to Home

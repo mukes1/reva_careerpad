@@ -1,0 +1,91 @@
+.app-sidebar__overlay(data-toggle="sidebar")
+aside.app-sidebar
+
+	.app-sidebar__user
+		img.app-sidebar__user-avatar(src='https://s3.amazonaws.com/uifaces/faces/twitter/jsa/48.jpg', alt='User Image')
+		div
+			p.app-sidebar__user-name Admin
+			p.app-sidebar__user-designation Placement Officer
+
+	ul.app-menu
+		li
+			a.app-menu__item(href='/adminDash' class={'active': activePage == 'dashboard'})
+				i.app-menu__icon.fa.fa-dashboard
+				span.app-menu__label CareerPad Dashboard
+
+		li.treeview(class={'is-expanded': activeGroup == 'placements'})
+			a.app-menu__item(href='#', data-toggle='treeview')
+				i.app-menu__icon.fa.fa-laptop
+				span.app-menu__label Placements
+				i.treeview-indicator.fa.fa-angle-right
+			ul.treeview-menu
+				li
+					a.treeview-item(href='/viewPlacement' class={'active': activePage == 'view-placements'})
+						i.icon.fa.fa-circle-o
+						|  View Placements
+				li
+					a.treeview-item(href='/addPlacement', rel="noopener" class={'active': activePage == 'add-placement'})
+						i.icon.fa.fa-circle-o
+						|  Add Placement
+				li
+					a.treeview-item(href='#' class={'active': activePage == 'placmement-info'})
+						i.icon.fa.fa-circle-o
+						|  Placement Info
+				li
+					a.treeview-item(href='#' class={'active': activePage == 'placement-reports'})
+						i.icon.fa.fa-circle-o
+						|  Placement Report
+
+		li.treeview(class={'is-expanded': activeGroup == 'Users'})
+			a.app-menu__item(href='#' data-toggle='treeview')
+				i.app-menu__icon.fa.fa-edit
+				span.app-menu__label Users
+				i.treeview-indicator.fa.fa-angle-right
+			ul.treeview-menu
+				li
+					a.treeview-item(href='/viewAllUsers' class={'active': activePage == 'view-all-users'})
+						i.icon.fa.fa-circle-o
+						|  View All Users
+				li
+					a.treeview-item(href='form-custom.pug' class={'active': activePage == 'add-users'})
+						i.icon.fa.fa-circle-o
+						|  Add Users
+				li
+					a.treeview-item(href='form-samples.pug' class={'active': activePage == 'departments'})
+						i.icon.fa.fa-circle-o
+						|  Departments
+
+		li.treeview(class={'is-expanded': activeGroup == 'MessageBox'})
+			a.app-menu__item(href='#' data-toggle='treeview')
+				i.app-menu__icon.fa.fa-th-list
+				span.app-menu__label MessageBox
+				i.treeview-indicator.fa.fa-angle-right
+			ul.treeview-menu
+				li
+					a.treeview-item(href='table-basic.pug' class={'active': activePage == 'emails'})
+						i.icon.fa.fa-circle-o
+						|  Emails
+				li
+					a.treeview-item(href='table-data-table.pug' class={'active': activePage == 'messages'})
+						i.icon.fa.fa-circle-o
+						|  Messages
+
+		li.treeview(class={'is-expanded': activeGroup == 'pages'})
+			a.app-menu__item(href='#' data-toggle='treeview')
+				i.app-menu__icon.fa.fa-file-text
+				span.app-menu__label Pages
+				i.treeview-indicator.fa.fa-angle-right
+			ul.treeview-menu
+				li
+					a.treeview-item(href='#' class={'active': activePage == 'admin'})
+						i.icon.fa.fa-circle-o
+						|  Admin 
+				li
+					a.treeview-item(href='#')
+						i.icon.fa.fa-circle-o
+						|  About
+				
+				li
+					a.treeview-item(href='#' class={'active': activePage == 'calendar-page'})
+						i.icon.fa.fa-circle-o
+						|  Calendar Page

@@ -1,8 +1,10 @@
 const express = require('express');
 const router = express.Router();
-
+const Placement = require('../model/placements');
 //endpoint for getting all placement offers
-router.get('/placements', (req, res, next)=>{
+router.get('/placements', async (req, res, next)=>{
+    placements = await Placement.getAllPlacements();
+    placement = placements.docs;
     res.render('placements', {title: 'Placement Offers'});
 });
 

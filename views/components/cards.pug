@@ -1,29 +1,12 @@
 .container
   .row
-    .col.col-sm-6.md-auto.col-lg-4
-      .cards
-        .cards__img
-          img.cards__img--inner(src='./img/offer2.png' alt='offer')
-        .cards__heading
-          p.cards__heading--primary Company
-          p.cards__heading--secondary Vacant Post
-        .cards__button
-          a.cards__link(href='placementById') View Details
-    .col.col-sm-6.md-auto.col-lg-4
-      .cards
-        .cards__img
-          img.cards__img--inner(src='./img/offer1.png' alt='offer')
-        .cards__heading
-          p.cards__heading--primary Company
-          p.cards__heading--secondary Vacant Post
-        .cards__button
-          a.cards__link(href='placementById') View Details
-    .col.col-sm-6.md-auto.col-lg-4
-      .cards
-        .cards__img
-          img.cards__img--inner(src='./img/offer.png' alt='offer 1')
-        .cards__heading
-          p.cards__heading--primary Company
-          p.cards__heading--secondary Vacant Post
-        .cards__button
-          a.cards__link(href='placementById') View Details
+    each val in placement
+      .col.col-sm-12.md-auto.col-lg-4
+        .cards
+          .cards__img
+            img.cards__img--inner(src=val.placementPicture alt='offer')
+          .cards__heading
+            p.cards__heading--primary #{val.placementCompany}
+            p.cards__heading--secondary #{val.placementTitle}
+          .cards__button
+            a.cards__link(href='placement/'+val._id) View Details

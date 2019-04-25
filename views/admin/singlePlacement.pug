@@ -1,0 +1,36 @@
+extends layouts/_layout.pug
+
+block variables
+    - var activePage = 'view-placements'
+    - var activeGroup = 'placements'
+
+block title
+    title View Placements- CareerPad
+
+block content
+    .app-title
+        div
+            h1
+                i.fa.fa-edit
+                |  View Placements
+            p View placements of REVA Careerpad
+
+        ul.app-breadcrumb.breadcrumb
+            li.breadcrumb-item
+                i.fa.fa-home.fa-lg
+            li.breadcrumb-item
+                | Placements
+            li.breadcrumb-item
+                a(href="/viewPlacement") View Placements
+     .row
+        each val in placement
+            .col-lg-6
+                .tile
+                    h2 #{val.placementTitle}
+                    h2.tile-title #{val.placementCompany}
+                    .tile-body.
+                        #{val.placementDetails}
+                    p Deadline : #{val.placementDeadline}
+                    p Eligbile Branches : #{val.placementEligibility}
+                    .tile-footer
+                        a.btn.btn-primary(href="#") View Details

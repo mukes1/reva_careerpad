@@ -1,0 +1,54 @@
+extends layouts/_layout.pug
+
+block variables
+    - var activePage = 'view-all-users'
+    - var activeGroup = 'Users'
+
+block title
+    title All Users - Careerpad
+
+block content
+    .app-title
+        div
+            h1
+                i.fa.fa-th-list
+                |  All Users
+            p Table to display all Careerpad Users
+
+        ul.app-breadcrumb.breadcrumb.side
+            li.breadcrumb-item
+                i.fa.fa-home.fa-lg
+            li.breadcrumb-item
+                | Tables
+            li.breadcrumb-item.active
+                a(href="#") User Table
+
+    .row
+        .col-md-12
+            .tile
+                .tile-body
+                    table.table.table-hover.table-bordered#sampleTable
+                        thead
+                            tr
+                                th Name
+                                th Department
+                                th Email
+                                th Contact
+                                th DOB
+                                th Address
+                        each user in users
+                            tr    
+                                td=user.firstName
+                                each val in user.Resume    
+                                    td=val.Degree
+                                td=user.email
+                                td=user.Contact
+                                td=user.DOB
+                                td=user.Address
+
+block specific-js
+    // Data table plugin
+    script(type='text/javascript', src="js/plugins/jquery.dataTables.min.js")
+    script(type='text/javascript', src="js/plugins/dataTables.bootstrap.min.js")
+    script(type='text/javascript').
+        $('#sampleTable').DataTable();

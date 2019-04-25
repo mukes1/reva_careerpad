@@ -1,0 +1,112 @@
+extends layouts/_layout.pug
+
+block variables
+	- var activePage = 'dashboard'
+	- var activeGroup = 'none'
+
+block content
+	.app-title
+		div
+			h1
+				i.fa.fa-dashboard
+				|  REVA Careerpad
+			p A portal for maintaining REVA placements
+		ul.app-breadcrumb.breadcrumb
+			li.breadcrumb-item
+				i.fa.fa-home.fa-lg
+			li.breadcrumb-item
+				a(href='#') Dashboard
+
+	.row
+		.col-md-6.col-lg-3
+			.widget-small.primary.coloured-icon
+				i.icon.fa.fa-users.fa-3x
+				div.info
+					h4 Users
+					p
+						b#totalUsers=totalUsers
+
+
+		.col-md-6.col-lg-3
+			.widget-small.info.coloured-icon
+				i.icon.fa.fa-files-o.fa-3x
+				div.info
+					h4 Total Placements
+					p
+						b#totalPlacements=totalPlacements
+
+		.col-md-6.col-lg-3
+			.widget-small.danger.coloured-icon
+				i.icon.fa.fa-star.fa-3x
+				div.info
+					h4 Total Companies
+					p
+						b=totalCompanies
+	.row
+		.col-md-6
+			.tile
+				h3.tile-title Placements Data
+				.embed-responsive.embed-responsive-16by9
+					canvas.embed-responsive-item(id="lineChartDemo")
+
+		.col-md-6
+			.tile
+				h3.tile-title Total Companies, Users and Placements
+				.embed-responsive.embed-responsive-16by9
+					canvas.embed-responsive-item(id="pieChartDemo")
+
+block specific-js
+	script(type='text/javascript', src="js/plugins/chart.js")
+	script(type='text/javascript').
+		var data = {
+			labels: ["January", "February", "March", "April", "May"],
+			datasets: [
+				{
+					label: "Placements of 2018",
+					fillColor: "rgba(220,220,220,0.2)",
+					strokeColor: "rgba(220,220,220,1)",
+					pointColor: "rgba(220,220,220,1)",
+					pointStrokeColor: "#fff",
+					pointHighlightFill: "#fff",
+					pointHighlightStroke: "rgba(220,220,220,1)",
+					data: [65, 59, 80, 81, 56]
+				},
+				{
+					label: "Placements of 2019",
+					fillColor: "rgba(151,187,205,0.2)",
+					strokeColor: "rgba(151,187,205,1)",
+					pointColor: "rgba(151,187,205,1)",
+					pointStrokeColor: "#fff",
+					pointHighlightFill: "#fff",
+					pointHighlightStroke: "rgba(151,187,205,1)",
+					data: [28, 48, 40, 19, 86]
+				}
+			]
+		};
+	
+		var pdata = [
+			{
+				value: #{totalPlacements},
+				color: "#46BFBD",
+				highlight: "#5AD3D1",
+				label: "Total Placements"
+			},
+			{
+				value: #{totalCompanies},
+				color:"#F7464A",
+				highlight: "#FF5A5E",
+				label: "Total Companies"
+			},
+			{
+				value: #{totalUsers},
+				color:"#3E50DA",
+				highlight: "#2196C0",
+				label: "Total Users"
+			}
+		]
+
+		var ctxl = $("#lineChartDemo").get(0).getContext("2d");
+		var lineChart = new Chart(ctxl).Line(data);
+
+		var ctxp = $("#pieChartDemo").get(0).getContext("2d");
+		var pieChart = new Chart(ctxp).Pie(pdata);
