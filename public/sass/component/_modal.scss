@@ -28,17 +28,17 @@
         padding: 1rem;
         border: 1px solid #888;
         width: 80%;
+        overflow: auto;
         /* Could be more or less, depending on screen size */
     }
 }
 
 /* The Close Button */
-.close {
+.close1 {
     color: #aaa;
     float: right;
-    font-size: 10rem;
+    font-size: 5rem;
     font-weight: bold;
-
     &:hover,
     &:focus {
         color: black;

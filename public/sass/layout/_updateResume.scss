@@ -8,9 +8,10 @@
         transform: translate(-50%, -50%);
         font-family: 'Roboto'sans-serif;
         width: 80rem;
+        height: 100%;
         padding: 5rem;
         margin-top: 4rem;
-        
+        overflow: auto;
 
         &--heading {
             color: white;
