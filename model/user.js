@@ -60,7 +60,10 @@ let userSchema = new Schema({
         type: String,
         default: 'uploads/profilePlaceholder.png'
     },
-    Resume: [resumeSchema]
+    Resume: [resumeSchema],
+    appliedPlacements: {
+        type: Array
+    }
 }, {
     timestamps: {
         createdAt: 'createdAt',

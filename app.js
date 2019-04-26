@@ -86,8 +86,7 @@ app.use(session({
   name: 'sid',
   secret: 'codeworkrsecret',
   cookie: {
-    maxAge: 300000,
-    sameSite: true
+    expires: 600000
   },
   store: store,
   saveUninitialized: false,

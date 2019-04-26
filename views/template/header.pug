@@ -1,15 +1,16 @@
 if success_messages.length > 0
-    .alert.alert-success-alt(role='alert')
-         button.close(type='button' data-dismiss='alert' aria-label='Close')
-            span(aria-hidden='true') &times;
-         strong #{success_messages}
-            
+   .row.alert-fixed
+      .col-lg-12.col.sm-12
+         .bs-component
+            .alert.alert-dismissible.alert-success
+               button.close(type='button', data-dismiss='alert') ×
+               strong #{success_messages}
 
 if error_messages.length > 0
-    .alert.alert-danger-alt(role='alert')
-         button.close(type='button' data-dismiss='alert' aria-label='Close')
-            span(aria-hidden='true') &times;
-         strong #{error_messages}
+   .row.alert-fixed
+      .col-lg-4
+         .bs-component
+            .alert.alert-dismissible.alert-danger
+               button.close(type='button', data-dismiss='alert') ×
+               strong #{error_messages}
 
-script.
-  

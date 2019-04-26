@@ -23,9 +23,16 @@ let placementSchema = new Schema({
         type: Date,
         required: true
     },
+    placementPosted: {
+        type: Date,
+        default: Date.now()
+    },
     placementPicture : {
         type: String,
         default: 'uploads/offer2.png'
+    },
+    registeredUsers : {
+        type: Array
     }
 });
 

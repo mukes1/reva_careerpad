@@ -37,7 +37,7 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light.navigation
   button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarTogglerDemo03' aria-controls='navbarTogglerDemo03' aria-expanded='false' aria-label='Toggle navigation')
     span.navbar-toggler-icon
   a.navbar-brand(href='#')
-    img(src='img/logo.png' alt='REVA Careerpad Logo')
+    img(src='/img/logo.png' alt='REVA Careerpad Logo')
   #navbarTogglerDemo03.collapse.navbar-collapse
     ul.navbar_nav.ml-auto
       if user == undefined
@@ -60,13 +60,17 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light.navigation
       else
         li.navigation__item.nav_item
           a.navigation__link.nav_link(href='#')
-            img(src='./img/icons/notifications.png' alt='notifications')
+            img(src='/img/icons/notifications.png' alt='notifications')
             |  Notifications
         li.navigation__item.nav_item
-          a.navigation__link.nav_link(href='#')
-            img(src='./img/icons/offers.png' alt='offers')
+          a.navigation__link.nav_link(href='/placements')
+            img(src='/img/icons/offers.png' alt='offers')
             | Offers
         li.navigation__item.nav_item
+          a.navigation__link.nav_link(href='/profile')
+            img(src='/img/icons/profile.png' alt='profile')
+            | Profile
+        li.navigation__item.nav_item
           a.navigation__link.nav_link(href='/logout')
-            img(src='./img/icons/profile.png' alt='profile')
+            img(src='/img/icons/profile.png' alt='profile')
             | Logout

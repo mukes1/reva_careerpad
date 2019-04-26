@@ -4,6 +4,7 @@ const path = require('path');
 const passport = require('passport');
 const session = require('express-session');
 const User = require('../model/user');
+const Placement = require('../model/placements');
 const Joi = require('joi');
 const moment = require('moment');
 const multer = require('multer');
@@ -79,7 +80,6 @@ router.get('/profile', (req, res, next) => {
 //endpoint for resume upload
 router.get('/resume', (req, res, next) => {
   try {
-    console.log(req.user.Resume);
     res.render('resume', {
       title: 'Upload Resume',
       user: req.user
@@ -184,12 +184,29 @@ router.post('/downloadResume', (req, res) => {
   }
 });
 
+//endpoint for history of applied placements
+router.get('/history', async(req, res)=>{
+    user = req.user;
+    placement = await Placement.find({
+      "_id": {
+          $in: user.appliedPlacements
+      }
+  });
+  console.log(placement);
+    res.render('history', {title: "History of Applied Placements", placement : placement});
+});
+
 
 //endpoint to logout
 router.get('/logout', (req, res) => {
-  req.logOut();
-  req.flash('success_messages', 'You are logged out');
-  res.redirect('/');
+  if (req.user && req.cookies.sid) {
+    req.logOut();
+    res.clearCookie('sid');
+    req.flash('success_messages', 'You are logged out');
+    res.redirect('/');
+} else {
+    res.redirect('/login');
+}
 });
 
 

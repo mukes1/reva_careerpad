@@ -4,10 +4,17 @@ block content
     .container.placement__profile
         .row
             .col
-                img.placement__profile--img(src=placement.placementPicture alt='Placement Picture')
+                img.placement__profile--img(src="/"+placement.placementPicture alt='Placement Picture')
             .col
                 h1.placement__profile--title #{placement.placementTitle}
+                h2 Placement Details 
                 p.placement__profile--description #{placement.placementDetails}
+                h2 Placement Eligible Branches
                 p.placement__profile--eligibility #{placement.placementEligibility}
-                button.btn.btn-primary.btn-lg.placement__profile--button(href='#') Apply Now
+                h2 Placement Posted On
+                p.placement__profile--posted #{placement.placementPosted}
+                h2 Placement Application Deadline
+                p.placement__profile--deadline #{placement.placementDeadline}
+                a.btn.btn-primary.btn-lg.placement__profile--button(href='/applyPlacement/'+placement._id) Apply Now
+                a.btn.btn-primary.btn-lg(href="/") Go Back
 

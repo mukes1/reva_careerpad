@@ -1,0 +1,40 @@
+extends layout
+
+block content
+    .dashboard.row
+        .dashboard__sidebar.col-lg-3
+            .dashboard__sidebar--profile
+                img.dashboard__sidebar--img(src=user.Avatar alt='profile picture')
+                br
+                h1 #{user.firstName}
+            ul.dashboard__sidebar--list
+                li.dashboard__sidebar--item
+                    a(href='#')
+                        img(src='./img/icons/profile.png' alt='profile')
+                        | Profile
+                li.dashboard__sidebar--item
+                    a(href='resume')
+                        img(src='./img/icons/resume.png' alt='resume')
+                        | Resume
+                li.dashboard__sidebar--item
+                    a(href='history')
+                        img(src='./img/icons/fa-history.png' alt='history')
+                        | History
+        .dashboard__profile.col-lg-9
+            h1 History of Applied Placements
+            if placement.length > 0
+                each val in placement
+                    .col-lg-6
+                        .bs-component
+                            .list-group
+                                a.list-group-item.list-group-item-action(href='#')
+                                    h3.list-group-item-heading=val.placementTitle
+                                    p.list-group-item-text=val.placementDetails
+            else    
+                .col-lg-6
+                    .bs-component
+                        .list-group
+                            a.list-group-item.list-group-item-action.active(href='#')
+                                h3.list-group-item-heading=placement.placementTitle
+                                p.list-group-item-text=placement.placementDetails
+                                

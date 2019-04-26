@@ -12,13 +12,7 @@ router.get('/', async (req, res, next)=> {
   });
 });
 
-//get placement by id
-router.get('/placement/:id', async (req, res)=>{
-  try{
-      placement = await Placement.findOne({_id: req.params.id});
-      res.render('singlePlacement');
-}catch(err){console.log(err)};
-})
+
 
 
 module.exports = router;
