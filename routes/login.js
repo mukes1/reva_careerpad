@@ -3,6 +3,7 @@ const router = express.Router();
 const User = require('../model/user');
 const passport = require('passport');
 const session = require('express-session');
+const Placement = require('../model/placements');
 require('../config/passport');
 
 //middleware to redirect to user profile if logged in
@@ -48,22 +49,25 @@ router.get('/adminLogin', (req, res, next) => {
   };
 });
 
-//endpoint for placementOffice login validation route
-/*router.post('/adminLogin', passport.authenticate('admin', {
-  successFlash: true,
-  failureRedirect: '/adminLogin',
-  failureFlash: true,
-  failureMessage: 'Admin Login Credentials Problem'
-}), (req, res, next) => {
-  req.flash('success_messages', 'Login Successful');
-  req.session.save(() => {
-    res.redirect('/adminDash');
-  });
-});
-*/
 
-router.post('/adminLogin', (req, res, next)=>{
-  res.redirect('/adminDash');
+//endpoint for admin dashboard fetch
+router.post('/adminLogin', async (req, res, next) => {
+  if (req.body.employeeEmail === "admin@revacareerpad.com" && req.body.employeePassword === "admin") {
+    req.flash('success_messages', 'Welcome Admin!');
+    totalPlacements = await Placement.find({}).count().sort({
+      placementDeadline: 1
+    });
+    totalUsers = await User.find({}).count();
+    totalCompanies = await Placement.find({}).distinct('placementCompany').count();
+    res.render('admin', {
+      title: 'CareerPad Admin',
+      admin: req.admin
+    });
+  }else{
+    req.flash('error_messages','Login Credentials Wrong');
+    res.redirect('back');
+  }
 });
+
 
 module.exports = router;

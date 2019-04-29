@@ -38,16 +38,27 @@ router.get('/applyPlacement/:id', async (req, res) => {
             res.redirect('/login');
         } else {
             loggedUser = req.user;
+            loggedUserDegree = loggedUser.Resume[0].Degree;
+            elligibile = placement.placementEligibility;
+
+            if(elligibile.includes(loggedUserDegree)=== false){
+                req.flash('error_messages', 'Sorry! You are not elligible for this placement.');
+                res.redirect('back');
+            }
+
             alreadyApplied = await User.findOne({
                 "appliedPlacements": {
                     $in: [placement._id]
                 }
             }).count();
-            console.log(alreadyApplied);
+
+            
+
             if (alreadyApplied > 0) {
-                req.flash('error_messages', 'You have already for placement ' + placement.placementTitle);
+                req.flash('error_messages', 'You have already applied for placement ' + placement.placementTitle);
                 res.redirect('back');
             } else {
+
                 await Placement.updateOne({
                     _id: req.params.id
                 }, {
