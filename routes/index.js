@@ -13,6 +13,15 @@ router.get('/', async (req, res, next)=> {
 });
 
 
+//endpoint for latest news
+router.get('/latestNews', (req, res)=>{
+  res.render('latestNews');
+});
 
+//endpoint to get about us
+router.get('/aboutUs', (req,res)=>{
+  user = req.user;
+  res.render('about',{title: 'About REVA Careerpad'});
+})
 
 module.exports = router;
