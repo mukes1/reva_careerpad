@@ -1,8 +1,8 @@
 const Nexmo = require('nexmo');
 
 const nexmo = new Nexmo({
-  apiKey: "649c3d7f",
-  apiSecret: "Fz8IFuRJtdmbejPc"
+  apiKey: "random",
+  apiSecret: "random427"
 });
 
 module.exports.sendBulkSms = (senderNumber, message, phoneNumbers) => {
