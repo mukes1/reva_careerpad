@@ -78,8 +78,8 @@ app.use(sassMiddleware({
   sourceMap: true
 }));
 
-app.use(express.static(path.join(__dirname, 'public')));
-app.use('/uploads',express.static(path.join(__dirname, 'uploads')));
+app.use(express.static(path.join(__dirname, '/public')));
+app.use('/uploads',express.static(path.join(__dirname, '/uploads')));
 
 //session config
 app.use(session({
@@ -128,5 +128,5 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500);
   res.render('admin/page-error');
 });
-
+ 
 module.exports = app;
