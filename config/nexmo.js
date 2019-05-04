@@ -1,7 +1,7 @@
 const Nexmo = require('nexmo');
 
 const nexmo = new Nexmo({
-  apiKey: "649c3d7f",
+  apiKey: "64d7f",
   apiSecret: "Fz8IFuRJtdmbejPc"
 });
 

@@ -143,25 +143,7 @@ router.post('/updateResume', async (req, res, next) => {
 
 //endpoint fro pdf download
 router.post('/downloadResume', (req, res) => {
-  /* try{
-  const user = req.user;
-  const doc = new PDFDocument()
-  let filename = user.firstName;
-  // Stripping special characters
-  filename = encodeURIComponent(filename) + '.pdf'
-  // Setting response to 'attachment' (download).
-  // If you use 'inline' here it will automatically open the PDF
-  res.setHeader('Content-disposition', 'attachment; filename="' + filename + '"')
-  res.setHeader('Content-type', 'application/pdf')
-  const content = path.join(__dirname, '../public', 'pdfResume.html');
-  console.log(content); 
-  doc.y = 300
-  doc.font('Times-Roman').text(content, 50, 50);
-  doc.pipe(res);
-  doc.end();
-}catch(err){
-  console.log(err);
-}*/
+  
   try {
     let options = {
       format: 'A4'

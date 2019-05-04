@@ -29,6 +29,17 @@ const upload = multer({
     }
 });
 
+const nodemailer = require('nodemailer');
+
+const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+        user: 'javascriptnepal@gmail.com',
+        pass: 'j$nep@l766'
+    }
+});
+
+
 
 const placementSchema = Joi.object().keys({
     placementTitle: Joi.string().required(),
@@ -72,8 +83,36 @@ router.post('/addPlacement', sUpload, async (req, res, next) => {
         for (i = 0; i < users.length; i++) {
             await phoneNumbers.push(users[i].Contact);
         }
-        message = "New Placement!! " + newPlacement.placementTitle + "!! " + newPlacement.placementCompany + "Apply Here http://reva-careerpad.herokuapp.com/placement/"+placement._id;
+        message = "New Placement!!<br> " + newPlacement.placementTitle + "!!<br> " + newPlacement.placementCompany + "Apply Here http://reva-careerpad.herokuapp.com/placement/" + newPlacement._id;
         await Nexmo.sendBulkSms("REVA CareerPad", message, phoneNumbers);
+
+        let emails = [];
+        for (i = 0; i < users.length; i++) {
+            await emails.push(users[i].email);
+        }
+
+        let mailOptions = {
+            from: 'javascriptnepal@gmail.com',
+            to: emails,
+            subject: 'New Placement Added', // Subject line
+            html: '<p>' + message + '</p>' // plain text body
+        };
+
+        
+        emails.forEach( async function (to, i , array) {
+            mailOptions.to = to;
+          
+             await transporter.sendMail(mailOptions, function (err) {
+              if (err) { 
+                console.log('Sending to ' + to + ' failed: ' + err);
+                return;
+              } else { 
+                console.log('Sent to ' + to);
+              }
+          
+              if (i === emails.length - 1) { msg.transport.close(); }
+            });
+          });
 
         res.redirect('/viewPlacement');
     } catch (err) {
@@ -110,7 +149,7 @@ router.get('/viewPlacement/:id', async (req, res) => {
                     $in: [regUsersId]
                 }
             });
-        }else {
+        } else {
             users = [];
         }
         res.render('admin/singlePlacement');

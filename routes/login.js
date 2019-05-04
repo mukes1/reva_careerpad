@@ -69,5 +69,8 @@ router.post('/adminLogin', async (req, res, next) => {
   }
 });
 
+router.get('/adminDash', (req, res)=>{
+  res.render('admin', {title: 'CareerPad Admin', admin: req.admin});
+});
 
 module.exports = router;
