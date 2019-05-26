@@ -10,3 +10,4 @@
 Admin Panel Access
  --> for admin login username: admin@careerpad.com password: admin  
 
+Note: user your own API secret key and password for Nexemo SMS. (I have kept random value in the code)
