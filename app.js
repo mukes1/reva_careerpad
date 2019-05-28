@@ -14,7 +14,7 @@ const config = require('./config/index');
 const MongoDBStore = require('connect-mongodb-session')(session);
 
 
-
+//all routes
 const indexRouter = require('./routes/index');
 const loginRouter = require('./routes/login');
 const registerRouter = require('./routes/register');
