@@ -2,19 +2,7 @@ extends layout
 
 block content
     include ./components/breadcrumbs.pug
-    .container
-        .row
-            each val in placement
-                .col.col-sm-12.md-auto.col-lg-4
-                    .cards
-                        .cards__img
-                            img.cards__img--inner(src=../val.placementPicture alt='offer')
-                        .cards__heading
-                            p.cards__heading--primary #{val.placementCompany}
-                            p.cards__heading--secondary #{val.placementTitle}
-                        .cards__button
-                            a.cards__link(href='placement/'+val._id) View Details
-
+    include ./components/cards.pug
     .container.nav_buttons
         a.previous.round(href='#') &lsaquo;
         a.next.round(href='#') &rsaquo;
