@@ -5,9 +5,10 @@ const User = require('../model/user');
 
 //endpoint for getting all placement offers
 router.get('/placements', async (req, res, next) => {
-    user = req.user;
+   /* user = req.user;
     placements = await Placement.getAllPlacements();
     placement = placements.docs;
+    */
     res.render('placements', {
         title: 'Placement Offers'
     });
