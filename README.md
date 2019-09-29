@@ -1,4 +1,4 @@
-# careerpad
+# Reva Careerpad
 1. Download the repository from github.
 2. Requirements - NodeJS 8 or higher, MongoDB, Internet Connection for BootStrap CDN (for frontend theme to load properly)
 3. To install all the dependencies -
