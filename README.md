@@ -8,6 +8,6 @@
 6. If you want to run development mode, type "npm run dev" from commandline.
 
 Admin Panel Access
- --> for admin login username: admin@careerpad.com password: admin  
+ --> for admin login username: admin@revacareerpad.com password: admin  
 
 Note: user your own API secret key and password for Nexemo SMS. (I have kept random value in the code)
