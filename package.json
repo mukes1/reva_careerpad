@@ -14,7 +14,7 @@
     "debug": "~2.6.9",
     "express": "~4.16.0",
     "express-flash-messages": "^0.1.1",
-    "express-jwt": "^5.3.1",
+    "express-jwt": "^6.0.0",
     "express-session": "^1.15.6",
     "html-pdf": "^2.2.0",
     "http-errors": "~1.6.2",
